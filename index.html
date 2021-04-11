@@ -11,52 +11,84 @@
   <title>Frontend Mentor | [Blogr]</title>
 
   <link rel="stylesheet" media="screen and (max-width: 375px)" href="css/mobile.css">
-  <link rel="stylesheet" media="screen and (min-width: 375px)" href="css/desktop.css">
+  <link rel="stylesheet" media="screen and (min-width: 376px)" href="css/desktop.css">
 </head>
 
 <body>
   <header>
-    <nav class="navbar">
-      <img class="logo" src="images/logo.svg" alt="logo">
-      <div class="dropdown-menus">
-        <div class="dropdown-title">Product<span class="arrow"></span></div>
-        <ul class="dropdown-list">
-          <li class="dropdown-list-item top-item">Overview</li>
-          <li class="dropdown-list-item">Pricing</li>
-          <li class="dropdown-list-item">Marketplace</li>
-          <li class="dropdown-list-item">Features</li>
-          <li class="dropdown-list-item bottom-item">Integrations</li>
-        </ul>
+    <div class="header-overlay">
+      <nav class="navbar">
+        <img class="logo" src="images/logo.svg" alt="logo">
+        <div class="dropdown-menus">
+          <div class="dropdown-title">Product<span class="arrow"></span></div>
+          <ul class="dropdown-list">
+            <li class="dropdown-list-item top-item">Overview</li>
+            <li class="dropdown-list-item">Pricing</li>
+            <li class="dropdown-list-item">Marketplace</li>
+            <li class="dropdown-list-item">Features</li>
+            <li class="dropdown-list-item bottom-item">Integrations</li>
+          </ul>
+        </div>
+        <div class="dropdown-menus">
+          <div class="dropdown-title">Company<span class="arrow"></span></div>
+          <ul class="dropdown-list">
+            <li class="dropdown-list-item top-item">About</li>
+            <li class="dropdown-list-item">Team</li>
+            <li class="dropdown-list-item">Blog</li>
+            <li class="dropdown-list-item bottom-item">Careers</li>
+          </ul>
+        </div>
+        <div class="dropdown-menus">
+          <div class="dropdown-title">Connect<span class="arrow"></span></div>
+          <ul class="dropdown-list">
+            <li class="dropdown-list-item top-item">Contact</li>
+            <li class="dropdown-list-item">Newsletter</li>
+            <li class="dropdown-list-item bottom-item">LinkedIn</li>
+          </ul>
+        </div>
+        <div class="navbar-buttons">
+          <a href="#" class="navbar-left-button">Login</a>
+          <button type="button" class="navbar-right-button">Sign Up</button>
+          <img id="hamburger-menu" src="images/icon-hamburger.svg" alt="hamburger-menu">
+          <img id="close-icon" src="images/icon-close.svg" alt="close-icon">
+        </div>
+      </nav>
+      <div class="showcase-content">
+        <h1>A modern publishing platform</h1>
+        <p>Grow your audience and build your online brand</p>
+        <div class="showcase-content-buttons">
+          <button type="button" class="showcase-content-left-button">Start for Free</button>
+          <button type="button" class="showcase-content-right-button">Learn More</button>
+        </div>
       </div>
-      <div class="dropdown-menus">
-        <div class="dropdown-title">Company<span class="arrow"></span></div>
-        <ul class="dropdown-list">
-          <li class="dropdown-list-item top-item">About</li>
-          <li class="dropdown-list-item">Team</li>
-          <li class="dropdown-list-item">Blog</li>
-          <li class="dropdown-list-item bottom-item">Careers</li>
-        </ul>
-      </div>
-      <div class="dropdown-menus">
-        <div class="dropdown-title">Connect<span class="arrow"></span></div>
-        <ul class="dropdown-list">
-          <li class="dropdown-list-item top-item">Contact</li>
-          <li class="dropdown-list-item">Newsletter</li>
-          <li class="dropdown-list-item bottom-item">LinkedIn</li>
-        </ul>
-      </div>
-      <div class="navbar-buttons">
-        <a href="#" class="navbar-left-button">Login</a>
-        <button type="button" class="navbar-right-button">Sign Up</button>
-        <img src="images/icon-hamburger.svg" alt="hamburger-menu">
-      </div>
-    </nav>
-    <div class="showcase-content">
-      <h1>A modern publishing platform</h1>
-      <p>Grow your audience and build your online brand</p>
-      <div class="showcase-content-buttons">
-        <button type="button" class="showcase-content-left-button">Start for Free</button>
-        <button type="button" class="showcase-content-right-button">Learn More</button>
+      <div class="mobile-menu">
+        <div class="mobile-dropdown-menu">
+          <div class="mobile-dropdown-title">Product<span class="mobile-arrow"></span></div>
+          <ul class="mobile-dropdown-list">
+            <li class="mobile-dropdown-list-item top-item">Overview</li>
+            <li class="mobile-dropdown-list-item">Pricing</li>
+            <li class="mobile-dropdown-list-item">Marketplace</li>
+            <li class="mobile-dropdown-list-item">Features</li>
+            <li class="mobile-dropdown-list-item bottom-item">Integrations</li>
+          </ul>
+        </div>
+        <div class="mobile-dropdown-menu">
+          <div class="mobile-dropdown-title">Company<span class="mobile-arrow"></span></div>
+          <ul class="mobile-dropdown-list">
+            <li class="mobile-dropdown-list-item top-item">About</li>
+            <li class="mobile-dropdown-list-item">Team</li>
+            <li class="mobile-dropdown-list-item">Blog</li>
+            <li class="mobile-dropdown-list-item bottom-item">Careers</li>
+          </ul>
+        </div>
+        <div class="mobile-dropdown-menu">
+          <div class="mobile-dropdown-title">Connect<span class="mobile-arrow"></span></div>
+          <ul class="mobile-dropdown-list">
+            <li class="mobile-dropdown-list-item top-item">Contact</li>
+            <li class="mobile-dropdown-list-item">Newsletter</li>
+            <li class="mobile-dropdown-list-item bottom-item">LinkedIn</li>
+          </ul>
+        </div>
       </div>
     </div>
   </header>
@@ -75,15 +107,15 @@
           by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
         </p>
       </div>
-      <div class="right-section-content">
-        <img src="images/illustration-editor-desktop.svg" alt="Editor Illustration">
+      <div class="first-illustration">
+        <img class="desktop-illustration" src="images/illustration-editor-desktop.svg" alt="Editor Illustration">
       </div>
     </div>
   </section>
   <section class="blue-background">
     <div class="section-content">
       <div class="second-ilustration">
-        <img src="images/illustration-phones.svg" alt="Phones Illustration">
+        <img class="phones-illustration" src="images/illustration-phones.svg" alt="Phones Illustration">
       </div>
       <div class="right-section-content">
         <h2>State of the Art Infrastructure</h2>
@@ -95,8 +127,8 @@
   </section>
   <section class="white-background">
     <div class="section-content">
-      <div class="left-section-side">
-        <img src="images/illustration-laptop-desktop.svg" alt="Laptop Illustration">
+      <div class="third-illustration">
+        <img class="desktop-illustration" src="images/illustration-laptop-desktop.svg" alt="Laptop Illustration">
       </div>
       <div class="right-section-side">
         <h3>Free, open, simple</h3>
@@ -146,6 +178,7 @@
       <span>Coded by <a href="#">Uros Tomic</a>.</span>
     </div>
   </footer>
+  <script src="js/script.js"></script>
 </body>
 
 </html>

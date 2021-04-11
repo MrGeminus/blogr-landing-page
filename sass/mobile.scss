@@ -36,9 +36,9 @@ header{
     height: 100%;
     border-bottom-left-radius: 7rem; 
     background: url(../images/bg-pattern-intro.svg);
-    background-size: 75rem;
+    background-size: 82rem;
     background-repeat: no-repeat;
-    background-position: -20rem -13rem;
+    background-position: -20.3rem -15rem;
 }    
 .navbar{
     padding: 3rem 1.3rem;
@@ -145,7 +145,6 @@ p{
     flex-direction: column;
     align-items: center;
     width: 80%;
-    height: 50rem;
     position: absolute;
     top: 8rem;
     left:0;
@@ -154,9 +153,10 @@ p{
     margin-right: auto;
     border-radius: 0.4rem;
     background-color: hsl(0, 0%, 100%);
+    box-shadow: -4px 34px 17px -22px rgba(0,0,0,0.1),-8px 30px 20px 11px rgba(0,0,0,0.1);
     .mobile-dropdown-menu{
         width: 85%;
-        margin-top: 2rem;
+        margin-top: 1.5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -177,23 +177,23 @@ p{
         background-repeat: no-repeat; 
         transition: 0.3s ease-in-out all;
     }
+    .mobile-arrow.active{
+        transform: rotate(180deg);
+        transform-origin: 0.35rem 0.25rem;
+    }
 }
 .mobile-dropdown-list{
     width: 100%;
     max-height: 0rem;
-    margin-top: 1.3rem;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 0.2rem;
+    background-color: hsl(240, 2%, 90%);
+    opacity: 0.8;
     overflow: hidden;
     transition: 0.5s ease-in-out max-height;
-    .gray-overlay{
-        width: 100%;
-        height: 100%;
-        background-color: hsl(240, 2%, 79%);
-        opacity: 0.4;
-    }
     .mobile-dropdown-list-item{
     color: hsl(208, 49%, 24%);
     font-family: Overpass-SemiBold;
@@ -210,6 +210,30 @@ p{
     .bottom-item{
     padding-bottom: 1.5rem;
     }
+}
+.divider{
+    width: 85%;
+    height: 0rem;
+    margin-top: 1.4rem;
+    margin-bottom: 2rem;
+    border: 0.1rem solid hsl(240, 2%, 90%);
+}
+.upper-mobile-button{
+    margin-bottom: 0.6rem;
+    color: hsl(208, 49%, 24%);;
+    font-family: Overpass-SemiBold;
+    font-weight: 300;
+    font-size: 1rem;
+    text-decoration: none;
+}
+.lower-mobile-button{
+    margin-top: 0.6rem;
+    margin-bottom: 2rem;
+    color: hsl(0, 0%, 100%);
+    font-family: Ubuntu-Medium;
+    font-weight: 500;
+    font-size: 1rem;
+    background-image: linear-gradient(100deg,hsl(13, 100%, 72%),hsl(353, 100%, 62%));
 }
 }
 }
@@ -328,6 +352,7 @@ section{
 // Footer styling 
 footer{
     width: 100vw;
+    margin-top: 6.1rem;
     display: flex;
     flex-direction: column;
     background-color: hsl(240, 10%, 16%);

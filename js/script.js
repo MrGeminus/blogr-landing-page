@@ -18,14 +18,18 @@ function openMobileMenu() {
     mobileMenu.style.display = "flex";
     mobileDropdownMenus.forEach(mobileDropdownMenu => {
         mobileDropdownMenu.addEventListener("click", () => {
-            let mobileDropdownList = mobileDropdownMenu.querySelector('.mobile-dropdown-list')
+            let mobileDropdownList = mobileDropdownMenu.querySelector('.mobile-dropdown-list');
+            let mobileArrow = mobileDropdownMenu.querySelector('.mobile-arrow');
+
             if (mobileDropdownMenu.classList.contains('active')) {
                 mobileDropdownMenu.classList.remove('active');
                 mobileDropdownList.style.maxHeight = "0";
+                mobileArrow.classList.remove('active');
             }
             else {
                 mobileDropdownMenu.classList.add('active');
                 mobileDropdownList.style.maxHeight = "50rem";
+                mobileArrow.classList.add('active')
             }
         })
     });

@@ -182,6 +182,9 @@ p{
         transform-origin: 0.35rem 0.25rem;
     }
 }
+.mobile-dropdown-title.active{
+    opacity: 0.8;
+}
 .mobile-dropdown-list{
     width: 100%;
     max-height: 0rem;
@@ -190,8 +193,7 @@ p{
     flex-direction: column;
     align-items: center;
     border-radius: 0.2rem;
-    background-color: hsl(240, 2%, 90%);
-    opacity: 0.8;
+    background-color: hsl(240, 3%, 94%);
     overflow: hidden;
     transition: 0.5s ease-in-out max-height;
     .mobile-dropdown-list-item{
@@ -202,7 +204,7 @@ p{
     transition: 0.5s ease-in-out color;
     padding: 0.6rem 0;   
     list-style: none;
-    opacity: 1;
+    opacity: 0.8;
     }  
     .top-item{
     padding-top: 1.5rem;
@@ -216,7 +218,7 @@ p{
     height: 0rem;
     margin-top: 1.4rem;
     margin-bottom: 2rem;
-    border: 0.1rem solid hsl(240, 2%, 90%);
+    border: 0.1rem solid hsl(240, 3%, 94%);
 }
 .upper-mobile-button{
     margin-bottom: 0.6rem;

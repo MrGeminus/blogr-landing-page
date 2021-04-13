@@ -26,45 +26,41 @@
 body{
     font-size: 1rem;
     overflow-x: hidden;
-header{
-    width: 100vw;
-    height: 100vh;
-    background-image: linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
-    border-bottom-left-radius: 7rem;
-.header-image{
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    scale: 1.3;
-    z-index: 1;
-}    
-.navbar{
-    padding: 3rem 7rem;
-    display: flex;
-    align-items: center;
-    z-index: 2;
-    .logo{
-        margin-right: 3rem;
-    }
+    header{
+        width: 100vw;
+        height: 37rem;
+        background-image: linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+        border-bottom-left-radius: 7rem;
+        .header-overlay{
+            width: 100%;
+            height: 100%;
+            border-bottom-left-radius: 7rem;
+            background: url(../images/bg-pattern-intro.svg);
+            background-repeat: no-repeat;
+            background-position: -28rem -84.5rem;
+            .navbar{
+               padding: 3rem 10.5rem;
+                display: flex;
+                align-items: center;
+                .logo{
+                    margin-right: 3.2rem;
+                }
     .navbar-buttons:last-of-type{
         margin-left: auto;
     }
-.dropdown-menus{   
-    width: 5.5rem;
+.dropdown-menus{  
     position: relative;
-    margin-left: 2.5rem; 
+    margin-left: 1.7rem; 
 .dropdown-title{
-    position: relative;
     color: hsl(0, 0%, 100%);
     font-family: Ubuntu-Regular;
     .arrow{
         width: 1rem;
         height: 1rem;
-        margin-left: 0.3rem;
-        position: absolute;
-        top: 0.5rem;
+        display: inline-block;
         background: url(../images/icon-arrow-light.svg);
         background-repeat: no-repeat; 
+        background-position: 0.4rem 0.5rem;
         transition: 0.3s ease-in-out all;
     }
 }
@@ -117,7 +113,7 @@ header{
     }
 }
 .navbar-left-button{
-    margin-right: 1.5rem;
+    margin-right: 1rem;
     font-family: Ubuntu-Medium;
     font-weight: 500;
     color: hsl(0, 0%, 100%);
@@ -125,10 +121,10 @@ header{
     opacity: 0.8;
 }
 .navbar-right-button{
-    margin-left: 1.5rem;
+    margin-left: 1rem;
     font-family: Ubuntu-Medium;
     font-weight: 500;
-    font-size: 1.15rem;
+    font-size: 1rem;
     color: hsl(356, 100%, 66%);
     background-color: hsl(0, 0%, 100%);
 }
@@ -139,27 +135,29 @@ header{
     border: 0.1rem solid hsl(355, 100%, 74%);
     transition: 0.4s ease-in-out all;
 }
+#hamburger-menu{
+    display: none;
 }
+#close-icon{
+    display: none;
+}
+} 
 .showcase-content{
     width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    margin-top: 5.1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-
 h1{
-    font-size: 4.3rem;
+    font-size: 3.5rem;
     font-family: Overpass-Light;
     color: hsl(0, 0%, 100%);
 }
 p{
-    margin-top: 1.3rem;
-    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
     font-family: Overpass-Light;
     color: hsl(0, 0%, 100%);
     opacity: 0.7;
@@ -168,8 +166,8 @@ p{
     margin-top: 3rem;
     display: flex;
 .showcase-content-left-button{
-    margin-right: 0.9rem;
-    font-size: 1.15rem;
+    margin-right: 0.5rem;
+    font-size: 1rem;
     font-family: Ubuntu-Medium;
     font-weight: 500;
     color: hsl(356, 100%, 66%);
@@ -183,8 +181,8 @@ p{
     border: 0.1rem solid hsl(355, 100%, 74%);
 }
 .showcase-content-right-button{
-    margin-left: 0.9rem;
-    font-size: 1.15rem;
+    margin-left: 0.5rem;
+    font-size: 1rem;
     font-family: Ubuntu-Medium;
     font-weight: 500;
     color: hsl(0, 0%, 100%);
@@ -198,17 +196,20 @@ p{
 }
 }
 }
+.mobile-menu{
+    display: none;
 }
+    }
+    button{
+        width: 8.3rem;
+        height: 3rem;
+        border: 0.1rem solid hsl(0, 0%, 100%);
+        border-radius: 1.9rem;
+    }    
 }
-button{
-    width: 9.7rem;
-    height: 3.6rem;
-    border: 0.1rem solid hsl(0, 0%, 100%);
-    border-radius: 1.9rem;
 }
 section{
     width: 100vw;
-    margin-top: 7rem;
     display: flex;
     flex-direction: column;
     .section-content{
@@ -218,28 +219,73 @@ section{
 }
 .white-background {
     background-color: hsl(0, 0%, 100%);
+    padding: 8.9rem 10.5rem;
     h2{
         width: 100%;
-        margin-bottom: 5rem;
+        margin-bottom: 1.3rem;
         text-align: center;
         font-family: Overpass-SemiBold;
         font-weight: 600;
         color: hsl(208, 49%, 24%);
     }
-    h3{
-        margin-top: 5.5rem;
-        margin-bottom: 1.5rem;
-        font-family: Overpass-SemiBold;
-        font-weight: 600;
-        font-size: 1.3rem;
-        color: hsl(208, 49%, 24%);
+    .section-content{
+        margin-bottom: 7rem;
+    .left-section-content{
+        width: 45.5%;
+        h3{
+            margin-top: 5.5rem;
+            margin-bottom: 1.5rem;
+            font-family: Overpass-SemiBold;
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: hsl(208, 49%, 24%);
+        }
+        p{
+            font-family: Overpass-Light;
+            font-weight: 300;
+            font-size: 1rem;
+            color: hsl(207, 13%, 34%);
+            line-height: 1.7rem;
+        }
     }
-    p{
-        font-family: Overpass-Light;
-        font-weight: 300;
-        font-size: 1rem;
-        color: hsl(207, 13%, 34%);
-        line-height: 1.7rem;
+    .right-section-side{
+        width: 45.5%;
+        h3{
+            margin-top: 5.5rem;
+            margin-bottom: 1.5rem;
+            font-family: Overpass-SemiBold;
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: hsl(208, 49%, 24%);
+        }
+        p{
+            font-family: Overpass-Light;
+            font-weight: 300;
+            font-size: 1rem;
+            color: hsl(207, 13%, 34%);
+            line-height: 1.7rem;
+        }
+    }
+    .first-illustration{
+        width: 54.5%;
+        height: 100%;
+        position: relative;
+        .desktop-illustration{
+            position: absolute;
+            top: -9.3rem;
+            left: 7rem;
+        }
+    }
+    .third-illustration{
+        width: 54.5%;
+        height: 100%;
+        position: relative;
+        .desktop-illustration{
+            position: absolute;
+            top: -6.3rem;
+            left: -28rem;
+        }
+    }
     }
 }
 .blue-background{
@@ -287,7 +333,7 @@ footer{
     border-top-right-radius: 7rem;
     .footer-upper-part{
     width: 100%;
-    padding: 3.9rem 30rem 2.5rem 7rem;
+    padding: 4.5rem 21rem 2.5rem 10.5rem;
     display: flex;
     justify-content: space-between;
     .footer-column{
@@ -309,6 +355,7 @@ footer{
             text-decoration: none;
         }
         a:hover{
+            cursor: pointer;
             text-decoration: underline;
         }
     }

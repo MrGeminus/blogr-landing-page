@@ -286,10 +286,13 @@ section{
         }
     }
     }
+    .extra-space-top-bottom{
+        margin-top: 5rem;
+    }
 }
 .blue-background{
     padding-right: 8.9rem;
-    background-color: hsl(237, 17%, 21%);
+    background-image: linear-gradient(225deg, hsl(237, 23%, 32%), hsl(237, 17%, 21%));
     border-top-right-radius: 7rem;
     border-bottom-left-radius: 7rem;
     .section-content{
@@ -299,13 +302,14 @@ section{
     border-bottom-left-radius: 7rem;
     background: url(../images/bg-pattern-circles.svg);
     background-repeat: no-repeat;
-    background-position: -14rem -34rem;
+    background-position: -91.5% 83%;
+    background-size: 81%;
     .right-section-content{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 40.85%;
-        margin: 7.5rem 0;
+        width: 40.41%;
+        margin: 7.2rem 0;
     h2{
         font-family: Overpass-SemiBold;
         font-weight: 600;
@@ -322,12 +326,12 @@ section{
     }
 }
     .second-ilustration{
-        width: 59.15%;
+        width: 59.59%;
         position: relative;
         img{
-            width: 70%;
             position: absolute;
-            top: -150%;
+            top: -17.90%;
+            left: 18.5%;
         }
     }
 }
@@ -335,6 +339,7 @@ section{
 // Footer styling 
 footer{
     width: 100vw;
+    margin-top: 3.7rem;
     display: flex;
     flex-direction: column;
     background-color: hsl(240, 10%, 16%);

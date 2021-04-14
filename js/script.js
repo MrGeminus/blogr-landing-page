@@ -16,7 +16,7 @@ function closeMobileMenu() {
             mobileDropdownTitle.classList.remove('active');
         }
     }
-    mobileMenu.style.display = "none";
+    mobileMenu.style.transform = "scaleX(0) scaleY(0)";
     closeIcon.removeEventListener('click', closeMobileMenu);
     closeIcon.style.display = "none";
     hamburgerMenu.style.display = "block";
@@ -28,7 +28,7 @@ function openMobileMenu() {
     hamburgerMenu.style.display = "none";
     closeIcon.style.display = "block";
     closeIcon.addEventListener('click', closeMobileMenu);
-    mobileMenu.style.display = "flex";
+    mobileMenu.style.transform = "scaleX(1) scaleY(1)";
     // going trough all 
     mobileDropdownMenus.forEach(mobileDropdownMenu => {
         function openDropdownMenu() {

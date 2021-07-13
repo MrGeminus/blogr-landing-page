@@ -1,72 +1,65 @@
 // defining variables
-let hamburgerMenu = document.getElementById('hamburger-menu');
-let closeIcon = document.getElementById('close-icon');
-let mobileMenu = document.querySelector('.mobile-menu');
-let mobileDropdownMenus = document.querySelectorAll('.mobile-dropdown-menu');
-// function which closes the mobile navigation menu if the close icon has been clicked
-function closeMobileMenu() {
-    for (let i = 0; i < mobileDropdownMenus.length; i++) {
-        let mobileDropdownList = mobileDropdownMenus[i].querySelector('.mobile-dropdown-list');
-        let mobileArrow = mobileDropdownMenus[i].querySelector('.mobile-arrow');
-        let mobileDropdownTitle = mobileDropdownMenus[i].querySelector('.mobile-dropdown-title');
-        if (mobileDropdownMenus[i].classList.contains('active')) {
-            mobileDropdownMenus[i].classList.remove('active');
-            mobileDropdownList.style.maxHeight = "0";
-            mobileArrow.classList.remove('active');
-            mobileDropdownTitle.classList.remove('active');
+let navTrigger = document.getElementById('nav-trigger');
+let navigationMenu = document.getElementById('navbar-menu');
+let navigationItems = navigationMenu.children
+let navigationMenuIsOpen = false;
+
+function manageDropdownMenu() {
+    let dropdownTitles = document.querySelectorAll(".dropdown__title")
+    dropdownTitles.forEach(dropdownTitle => {
+        let dropdownList = dropdownTitle.nextElementSibling
+        let dropdownArrow = dropdownTitle.firstElementChild
+        if (navigationMenuIsOpen) {
+            dropdownTitle.addEventListener("click", toggleDropdownMenu)
         }
-    }
-    mobileMenu.style.transform = "scaleX(0) scaleY(0)";
-    closeIcon.removeEventListener('click', closeMobileMenu);
-    closeIcon.style.display = "none";
-    hamburgerMenu.style.display = "block";
-    hamburgerMenu.addEventListener('click', openMobileMenu);
-}
-// function which opens the mobile navigation menu if the hamburger icon has been clicked
-function openMobileMenu() {
-    hamburgerMenu.removeEventListener('click', openMobileMenu);
-    hamburgerMenu.style.display = "none";
-    closeIcon.style.display = "block";
-    closeIcon.addEventListener('click', closeMobileMenu);
-    mobileMenu.style.transform = "scaleX(1) scaleY(1)";
-    // going trough all 
-    mobileDropdownMenus.forEach(mobileDropdownMenu => {
-        function openDropdownMenu() {
-            let mobileDropdownList = mobileDropdownMenu.querySelector('.mobile-dropdown-list');
-            let mobileArrow = mobileDropdownMenu.querySelector('.mobile-arrow');
-            let mobileDropdownTitle = mobileDropdownMenu.querySelector('.mobile-dropdown-title');
-            if (mobileDropdownMenu.classList.contains('active')) {
-                mobileDropdownMenu.classList.remove('active');
-                mobileDropdownList.style.maxHeight = "0";
-                mobileArrow.classList.remove('active');
-                mobileDropdownTitle.classList.remove('active');
+        else {
+            for (let i = 0; i < dropdownTitles.length; i++) {
+                dropdownTitles[i].nextElementSibling.classList.remove("dropdown__list--active")
+            }
+            dropdownTitle.removeEventListener("click", toggleDropdownMenu)
+        }
+        function toggleDropdownMenu() {
+            if (dropdownList.classList.contains("dropdown__list--active")) {
+                dropdownList.classList.remove("dropdown__list--active")
+                dropdownArrow.classList.remove("dropdown__arrow--active")
             }
             else {
-                for (let i = 0; i < mobileDropdownMenus.length; i++) {
-                    let mobileDropdownList = mobileDropdownMenus[i].querySelector('.mobile-dropdown-list');
-                    let mobileArrow = mobileDropdownMenus[i].querySelector('.mobile-arrow');
-                    let mobileDropdownTitle = mobileDropdownMenus[i].querySelector('.mobile-dropdown-title');
-                    if (mobileDropdownMenus[i].classList.contains('active')) {
-                        mobileDropdownMenus[i].classList.remove('active');
-                        mobileDropdownList.style.maxHeight = "0";
-                        mobileArrow.classList.remove('active');
-                        mobileDropdownTitle.classList.remove('active');
-                    }
+                for (let i = 0; i < dropdownTitles.length; i++) {
+                    dropdownTitles[i].nextElementSibling.classList.remove("dropdown__list--active")
+                    dropdownTitles[i].firstElementChild.classList.remove("dropdown__arrow--active")
                 }
-                mobileDropdownMenu.classList.add('active');
-                mobileDropdownList.style.maxHeight = "50rem";
-                mobileArrow.classList.add('active');
-                mobileDropdownTitle.classList.add('active');
+                dropdownList.classList.add("dropdown__list--active");
+                dropdownArrow.classList.add("dropdown__arrow--active")
+
             }
         }
-        function removemobileDropdownMenuEventListener() {
-            mobileDropdownMenu.removeEventListener("click", openDropdownMenu);
-            closeIcon.removeEventListener('click', removemobileDropdownMenuEventListener);
-            closeMobileMenu();
-        }
-        mobileDropdownMenu.addEventListener("click", openDropdownMenu);
-        closeIcon.addEventListener('click', removemobileDropdownMenuEventListener);
     });
 }
+// function which closes the mobile navigation menu if the close icon has been clicked
+function closeNavigationMenu() {
+    navigationMenu.style.transform = "scale(1,0)";
+    navTrigger.removeEventListener('click', closeNavigationMenu);
+    navTrigger.classList.remove("button--close")
+    navTrigger.classList.add("button--open")
+    navTrigger.addEventListener('click', openNavigationMenu);
+    for (let i = 0; i < navigationItems.length; i++) {
+        navigationItems[i].classList.remove(`${navigationItems[i].classList[0]}` + "--active");
+    }
+    navigationMenuIsOpen = false;
+    manageDropdownMenu();
+}
+// function which opens the mobile navigation menu if the hamburger icon has been clicked
+function openNavigationMenu() {
+    navTrigger.removeEventListener('click', openNavigationMenu);
+    navTrigger.classList.remove("button--open")
+    navTrigger.classList.add("button--close")
+    navTrigger.addEventListener('click', closeNavigationMenu);
+    navigationMenu.style.transform = "scale(1,1)";
+    for (let i = 0; i < navigationItems.length; i++) {
+        navigationItems[i].classList.add(`${navigationItems[i].classList[0]}` + "--active")
+    }
+    navigationMenuIsOpen = true;
+    manageDropdownMenu();
+}
 // checking if the user has clicked the hamburger icon
-hamburgerMenu.addEventListener('click', openMobileMenu);
+navTrigger.addEventListener('click', openNavigationMenu);

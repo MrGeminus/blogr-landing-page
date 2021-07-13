@@ -4,146 +4,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
   <title>Frontend Mentor | [Blogr]</title>
-
-  <link rel="stylesheet" media="screen and (max-width: 375px)" href="css/mobile.css">
-  <link rel="stylesheet" media="screen and (min-width: 376px)" href="css/desktop.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <header class="page-header">
-    <div class="header-overlay">
-      <nav class="navbar">
-        <img class="Blogr Logo" src="images/logo.svg" alt="logo">
-        <div class="dropdown-menus">
-          <div class="dropdown-title">Product<span class="arrow"></span></div>
-          <ul class="dropdown-list">
-            <li class="dropdown-list-item top-item">Overview</li>
-            <li class="dropdown-list-item">Pricing</li>
-            <li class="dropdown-list-item">Marketplace</li>
-            <li class="dropdown-list-item">Features</li>
-            <li class="dropdown-list-item bottom-item">Integrations</li>
+    <div class="page-header__overlay page-header__overlay--color"></div>
+    <nav class="navbar">
+      <img class="navbar-logo" src="images/logo.svg" alt="Blogr Logo">
+      <ul id="navbar-menu" class="navbar-menu navbar-menu--color">
+        <li class="dropdown">
+          <a href="#" class="dropdown__title">Product<img src="images/icon-arrow-dark.svg" icon-arrow-dark
+              alt="Arrow Icon" class="dropdown__arrow"></a>
+          <ul class="dropdown__list dropdown__list--color">
+            <li class="dropdown-list-item dropdown__list-item--margin-buttom dropdown__list-item--margin-top">
+              <a class="dropdown__list-item-link" href="#">Overview</a>
+            </li>
+            <li class="dropdown-list-item dropdown__list-item--margin-buttom"><a class="dropdown__list-item-link"
+                href="#">Pricing</a></li>
+            <li class="dropdown-list-item dropdown__list-item--margin-buttom"><a class="dropdown__list-item-link"
+                href="#">Marketplace</a></li>
+            <li class="dropdown-list-item dropdown__list-item--margin-buttom"><a class="dropdown__list-item-link"
+                href="#">Features</a></li>
+            <li class="dropdown-list-item"><a class="dropdown__list-item-link" href="#">Integrations</a></li>
           </ul>
-        </div>
-        <div class="dropdown-menus">
-          <div class="dropdown-title">Company<span class="arrow"></span></div>
-          <ul class="dropdown-list">
-            <li class="dropdown-list-item top-item">About</li>
-            <li class="dropdown-list-item">Team</li>
-            <li class="dropdown-list-item">Blog</li>
-            <li class="dropdown-list-item bottom-item">Careers</li>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown__title">Company<img src="images/icon-arrow-dark.svg" icon-arrow-dark
+              alt="Arrow Icon" class="dropdown__arrow dropdown__arrow--push-down"></a>
+          <ul class="dropdown__list dropdown__list--color">
+            <li class="dropdown-list-item dropdown__list-item--margin-buttom dropdown__list-item--margin-top"><a
+                class="dropdown__list-item-link" href="#">About</a></li>
+            <li class="dropdown-list-item dropdown__list-item--margin-buttom"><a class="dropdown__list-item-link"
+                href="#">Team</a></li>
+            <li class="dropdown-list-item dropdown__list-item--margin-buttom"><a class="dropdown__list-item-link"
+                href="#">Blog</a></li>
+            <li class="dropdown-list-item"><a class="dropdown__list-item-link" href="#">Careers</a></li>
           </ul>
-        </div>
-        <div class="dropdown-menus">
-          <div class="dropdown-title">Connect<span class="arrow"></span></div>
-          <ul class="dropdown-list">
-            <li class="dropdown-list-item top-item">Contact</li>
-            <li class="dropdown-list-item">Newsletter</li>
-            <li class="dropdown-list-item bottom-item">LinkedIn</li>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown__title">Connect <img src="images/icon-arrow-dark.svg" icon-arrow-dark
+              alt="Arrow Icon" class="dropdown__arrow"></a>
+          <ul class="dropdown__list dropdown__list--color">
+            <li class="dropdown__list-item dropdown__list-item--margin-buttom dropdown__list-item--margin-top"><a
+                class="dropdown__list-item-link" href="#">Contact</a></li>
+            <li class="dropdown__list-item dropdown__list-item--margin-buttom"><a class="dropdown__list-item-link"
+                href="#">Newsletter</a></li>
+            <li class="dropdown__list-item"><a class="dropdown__list-item-link" href="#">LinkedIn</a></li>
           </ul>
-        </div>
-        <div class="navbar-buttons">
-          <a href="#" class="navbar-left-button">Login</a>
-          <button type="button" class="navbar-right-button">Sign Up</button>
-          <img id="hamburger-menu" src="images/icon-hamburger.svg" alt="hamburger-menu">
-          <img id="close-icon" src="images/icon-close.svg" alt="close-icon">
-        </div>
-      </nav>
-      <div class="showcase-content">
-        <h1>A modern publishing platform</h1>
-        <p>Grow your audience and build your online brand</p>
-        <div class="showcase-content-buttons">
-          <button type="button" class="showcase-content-left-button">Start for Free</button>
-          <button type="button" class="showcase-content-right-button">Learn More</button>
-        </div>
-      </div>
-      <div class="mobile-menu">
-        <div class="mobile-dropdown-menu">
-          <div class="mobile-dropdown-title">Product<span class="mobile-arrow"></span></div>
-          <ul class="mobile-dropdown-list">
-            <li class="mobile-dropdown-list-item top-item">Overview</li>
-            <li class="mobile-dropdown-list-item">Pricing</li>
-            <li class="mobile-dropdown-list-item">Marketplace</li>
-            <li class="mobile-dropdown-list-item">Features</li>
-            <li class="mobile-dropdown-list-item bottom-item">Integrations</li>
-          </ul>
-        </div>
-        <div class="mobile-dropdown-menu">
-          <div class="mobile-dropdown-title">Company<span class="mobile-arrow"></span></div>
-          <ul class="mobile-dropdown-list">
-            <li class="mobile-dropdown-list-item top-item">About</li>
-            <li class="mobile-dropdown-list-item">Team</li>
-            <li class="mobile-dropdown-list-item">Blog</li>
-            <li class="mobile-dropdown-list-item bottom-item">Careers</li>
-          </ul>
-        </div>
-        <div class="mobile-dropdown-menu">
-          <div class="mobile-dropdown-title">Connect<span class="mobile-arrow"></span></div>
-          <ul class="mobile-dropdown-list">
-            <li class="mobile-dropdown-list-item top-item">Contact</li>
-            <li class="mobile-dropdown-list-item">Newsletter</li>
-            <li class="mobile-dropdown-list-item bottom-item">LinkedIn</li>
-          </ul>
-        </div>
-        <div class="divider"></div>
-        <a href="#" class="upper-mobile-button">Login</a>
-        <button type="button" class="lower-mobile-button">Sign Up</button>
+        </li>
+        <li class="navbar-menu__divider">
+        </li>
+        <li class="navbar-menu__links">
+          <a href="#" class="navbar-menu__link">Login</a>
+          <a href="#" class="navbar-menu__link navbar-menu__link--button-like navbar-menu__link--red">Sign Up</a>
+        </li>
+      </ul>
+      <button id="nav-trigger" class="button button--open">
+      </button>
+    </nav>
+    <div class="page-header__content">
+      <h1 class="page-header__content-title page-header__content-title--text-color">A modern publishing platform</h1>
+      <p class="page-header__content-description page-header__content-description--text-color">Grow your audience and
+        build your online brand</p>
+      <div class="page-header__call-to-action">
+        <a class="page-header__link page-header__link--white">Start for Free</a>
+        <a class="page-header__link page-header__link--red">Learn More</a>
       </div>
     </div>
   </header>
-  <main class="page-content">
-    <section class="white-background">
-      <h2>Designed for the future</h2>
-      <div class="section-content">
-        <div class="left-section-content">
-          <h3>Introducing an extensible editor</h3>
-          <p>Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content.
+  <main class="main-content">
+    <section class="section-content section-content--white-background">
+      <h2 class="section-content__title">Designed for the future</h2>
+      <div class="">
+        <div class="">
+          <h3 class="section-content__subtitle">Introducing an extensible editor</h3>
+          <p class="section-content__description">Blogr features an exceedingly intuitive interface which lets you focus
+            on one thing: creating content.
             The editor supports management of multiple blogs and allows easy manipulation of embeds such as images,
             videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or
             change the looks of a blog.</p>
 
-          <h3>Robust content management</h3>
-          <p>Flexible content management enables users to easily move through posts. Increase the usability of your blog
+          <h3 class="section-content__subtitle">Robust content management</h3>
+          <p class="section-content__description">Flexible content management enables users to easily move through
+            posts. Increase the usability of your blog
             by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
           </p>
         </div>
-        <div class="first-illustration">
+        <div class="">
           <img class="desktop-illustration" src="images/illustration-editor-desktop.svg" alt="Editor Illustration">
         </div>
       </div>
     </section>
-    <section class="blue-background">
-      <div class="section-content">
-        <div class="second-ilustration">
+    <section class="section-content section-content--blue-background">
+      <div class="">
+        <div class="">
           <img class="phones-illustration" src="images/illustration-phones.svg" alt="Phones Illustration">
         </div>
-        <div class="right-section-content">
-          <h2>State of the Art Infrastructure</h2>
-          <p>With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast
+        <div class="">
+          <h2 class="section-content__title">State of the Art Infrastructure</h2>
+          <p class="section-content__description">With reliability and speed in mind, worldwide data centers provide the
+            backbone for ultra-fast
             connectivity.
             This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
           </p>
         </div>
       </div>
     </section>
-    <section class="white-background">
-      <div class="section-content extra-space-top-bottom">
-        <div class="third-illustration">
+    <section class="section-content section-content--white-background">
+      <div class="">
+        <div class="">
           <img class="desktop-illustration" src="images/illustration-laptop-desktop.svg" alt="Laptop Illustration">
         </div>
-        <div class="right-section-side">
-          <h3>Free, open, simple</h3>
-          <p>Blogr is a free and open source application backed by a large community of helpful developers. It supports
+        <div class="">
+          <h3 class="section-content__subtitle">Free, open, simple</h3>
+          <p class="section-content__description">Blogr is a free and open source application backed by a large
+            community of helpful developers. It supports
             features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting
             tools,
             and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.</p>
 
-          <h3>Powerful tooling</h3>
-          <p>Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment
+          <h3 class="section-content__subtitle">Powerful tooling</h3>
+          <p class="section-content__description">Batteries included. We built a simple and straightforward CLI tool
+            that makes customization and deployment
             a
             breeze,
             but
@@ -152,8 +137,8 @@
       </div>
     </section>
   </main>
-  <footer class="page-footer">
-    <div class="footer-upper-part">
+  <footer class="footer-content footer-content--background-color">
+    <div class="footer-content__links">
       <div class="logo-footer"><img src="images/logo.svg" alt="Blogr Logo"></div>
       <div class="footer-column">
         <h4>Product</h4>
@@ -180,7 +165,7 @@
         <a>LinkedIn</a>
       </div>
     </div>
-    <div class="footer-lower-part">
+    <div class="footer-content__attribution">
       <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener"> Frontend
           Mentor</a>.</p>
       <p>Coded by <a href="https://mrgeminus.com/" target="_blank" rel="noopener">Uros Tomic</a>.</span>

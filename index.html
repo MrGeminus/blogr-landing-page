@@ -5,191 +5,131 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="/css/style.css">
   <title>Frontend Mentor | [Blogr]</title>
-  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <header class="page-header">
-    <div class="page-header__overlay page-header__overlay--color"></div>
-    <nav class="navbar">
-      <img class="navbar-logo" src="images/logo.svg" alt="Blogr Logo">
-      <ul id="navbar-menu" class="navbar-menu navbar-menu--color">
-        <li class="dropdown">
-          <a href="#" class="dropdown__title">Product<img src="images/icon-arrow-dark.svg" alt="Arrow Icon"
-              class="dropdown__arrow"></a>
-          <ul class="dropdown__list dropdown__list--color">
-            <li class="dropdown-list-item dropdown__list-item--margin-buttom dropdown__list-item--margin-top">
-              <a class="dropdown__list-item-link" href="#">Overview</a>
-            </li>
-            <li class="dropdown-list-item dropdown__list-item--margin-buttom"><a class="dropdown__list-item-link"
-                href="#">Pricing</a></li>
-            <li class="dropdown-list-item dropdown__list-item--margin-buttom"><a class="dropdown__list-item-link"
-                href="#">Marketplace</a></li>
-            <li class="dropdown-list-item dropdown__list-item--margin-buttom"><a class="dropdown__list-item-link"
-                href="#">Features</a></li>
-            <li class="dropdown-list-item"><a class="dropdown__list-item-link" href="#">Integrations</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown__title">Company<img src="images/icon-arrow-dark.svg" alt="Arrow Icon"
-              class="dropdown__arrow dropdown__arrow--push-down"></a>
-          <ul class="dropdown__list dropdown__list--color">
-            <li class="dropdown-list-item dropdown__list-item--margin-buttom dropdown__list-item--margin-top"><a
-                class="dropdown__list-item-link" href="#">About</a></li>
-            <li class="dropdown-list-item dropdown__list-item--margin-buttom"><a class="dropdown__list-item-link"
-                href="#">Team</a></li>
-            <li class="dropdown-list-item dropdown__list-item--margin-buttom"><a class="dropdown__list-item-link"
-                href="#">Blog</a></li>
-            <li class="dropdown-list-item"><a class="dropdown__list-item-link" href="#">Careers</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown__title">Connect <img src="images/icon-arrow-dark.svg" alt="Arrow Icon"
-              class="dropdown__arrow"></a>
-          <ul class="dropdown__list dropdown__list--color">
-            <li class="dropdown__list-item dropdown__list-item--margin-buttom dropdown__list-item--margin-top"><a
-                class="dropdown__list-item-link" href="#">Contact</a></li>
-            <li class="dropdown__list-item dropdown__list-item--margin-buttom"><a class="dropdown__list-item-link"
-                href="#">Newsletter</a></li>
-            <li class="dropdown__list-item"><a class="dropdown__list-item-link" href="#">LinkedIn</a></li>
-          </ul>
-        </li>
-        <li class="navbar-menu__divider">
-        </li>
-        <li class="navbar-menu__links">
-          <a href="#" class="navbar-menu__link">Login</a>
-          <a href="#" class="navbar-menu__link navbar-menu__link--button-like navbar-menu__link--red">Sign Up</a>
-        </li>
-      </ul>
-      <button id="nav-trigger" class="button button--open">
-      </button>
+  <header>
+    <nav>
+      Product
+
+      Overview
+      Pricing
+      Marketplace
+      Features
+      Integrations
+
+      Company
+
+      About
+      Team
+      Blog
+      Careers
+
+      Connect
+
+      Contact
+      Newsletter
+      LinkedIn
+
+      <a href="#">Login</a>
+      <a href="#">Sign Up</a>
+      <button></button>
     </nav>
-    <div class="page-header__content">
-      <h1 class="page-header__content-title page-header__content-title--text-color">A modern publishing platform</h1>
-      <p class="page-header__content-description page-header__content-description--text-color">Grow your audience and
-        build your online brand</p>
-      <div class="page-header__call-to-action">
-        <a class="page-header__link page-header__link--white">Start for Free</a>
-        <a class="page-header__link page-header__link--red">Learn More</a>
-      </div>
-    </div>
+
+    A modern publishing platform
+    Grow your audience and build your online brand
+
+    <a href="#">Start for Free</a>
+    <a href="#">Learn More</a>
   </header>
-  <main class="main-content">
-    <h2 class="main-content__title main-content__title--text-dark">Designed for the future</h2>
-    <section class="section-content section-content--white-background section-content--big-padding-bottom">
-      <div class="section-content__editor-illustration"></div>
-      <div class="section-content__text">
-        <h3 class="section-content__title section-content__title--text-dark">Introducing an extensible editor
-        </h3>
-        <p class="section-content__description section-content__description--text-dark">Blogr features an exceedingly
-          intuitive interface which lets you focus
-          on one thing: creating content.
-          The editor supports management of multiple blogs and allows easy manipulation of embeds such as images,
-          videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or
-          change the looks of a blog.</p>
+  <main>
+    <section class="section">
+      <h2 class="section__title">Designed for the future</h2>
+      <div class="section__editor-illustration"></div>
+      <h3 class="section__subtitle section__subtitle--mt">Introducing an extensible editor</h3>
+      <p class="section__description section__description--mb">Blogr features an exceedingly intuitive interface
+        which
+        lets you focus on one
+        thing: creating content.
+        The editor supports management of multiple blogs and allows easy manipulation of embeds such as images,
+        videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or
+        change the looks of a blog.</p>
 
-        <h3 class="section-content__title section-content__title--text-dark">Robust content management</h3>
-        <p class="section-content__description section-content__description--text-dark">Flexible content management
-          enables users to easily move through
-          posts. Increase the usability of your blog
-          by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
-        </p>
-      </div>
+      <h3 class="section__subtitle">Robust content management</h3>
+      <p class="section__description">Flexible content management enables users to easily move through posts.
+        Increase
+        the usability of your blog
+        by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
+      </p>
     </section>
-    <section
-      class="section-content section-content--blue-background section-content--normal-padding-bottom section-content--big-padding-top section-content--rounded-corners">
-      <div class="section-content__ovarlay section-content__ovarlay--color section-content__ovarlay--rounded-corners">
-      </div>
-      <div class="section-content__phones-illustration"></div>
-      <div class="section-content__text">
-        <h2 class="section-content__title section-content__title--text-light section-content__title--text-big">
-          State
-          of the Art Infrastructure</h2>
-        <p class="section-content__description section-content__description--text-light">With reliability and speed in
-          mind, worldwide data centers provide the
-          backbone for ultra-fast
-          connectivity.
-          This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
-        </p>
-      </div>
+    <section class="section section--bg-color section--overflow-y">
+      <div class="section__overlay"></div>
+      <div class="section__mobile-illustration"></div>
+      <h3 class="section__subtitle">State of the Art Infrastructure</h3>
+      <p class="section__description">With reliability and speed in mind, worldwide data centers provide the backbone
+        for ultra-fast connectivity.
+        This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.</p>
     </section>
-    <section class="section-content section-content--white-background">
-      <div class="section-content__laptop-illustration"></div>
-      <div class="section-content__text">
-        <h3 class="section-content__title section-content__title--text-dark">Free, open, simple</h3>
-        <p class="section-content__description section-content__description--text-dark">Blogr is a free and open
-          source application backed by a large
-          community of helpful developers. It supports
-          features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting
-          tools,
-          and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.</p>
+    <section class="section">
+      <div class="section__laptop-illustration"></div>
+      <h3 class="section__subtitle">Free, open, simple</h3>
+      <p class="section__description">Blogr is a free and open source application backed by a large community of helpful
+        developers. It supports
+        features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools,
+        and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.</p>
 
-        <h3 class="section-content__title section-content__title--text-dark">Powerful tooling</h3>
-        <p class="section-content__description section-content__description--text-dark">Batteries included. We built
-          a simple and straightforward CLI tool
-          that makes customization and deployment
-          a
-          breeze,
-          but
-          capable of producing even the most complicated sites.</p>
-      </div>
+      <h3 class="section__subtitle">Powerful tooling</h3>
+      <p class="section__description">Batteries included. We built a simple and straightforward CLI tool that makes
+        customization and deployment a
+        breeze,
+        but
+        capable of producing even the most complicated sites.</p>
     </section>
   </main>
-  <footer class="footer-content footer-content--background-color">
-    <div class="footer-content__links">
-      <img class="footer-content__logo" src="images/logo.svg" alt="Blogr Logo">
-      <ul class="footer-content__column footer-content__column--mt-2">
-        <li class="footer-content__column-item footer-content__column-item--mb-1">
-          <h3 class="footer-content__column-title footer-content__column-title--text-color">Product</h3>
-        </li>
-        <li class="footer-content__column-item"><a href="#"
-            class="footer-content__column-link footer-content__column-link--text-color">Overview</a></li>
-        <li class="footer-content__column-item"><a href="#"
-            class="footer-content__column-link footer-content__column-link--text-color">Pricing</a></li>
-        <li class="footer-content__column-item"><a href="#"
-            class="footer-content__column-link footer-content__column-link--text-color">Marketplace</a></li>
-        <li class="footer-content__column-item"><a href="#"
-            class="footer-content__column-link footer-content__column-link--text-color">Features</a></li>
-        <li class="footer-content__column-item"><a href="#"
-            class="footer-content__column-link footer-content__column-link--text-color">Integrations</a></li>
-      </ul>
-      <ul class="footer-content__column">
-        <li class="footer-content__column-item footer-content__column-item--mb-1">
-          <h3 class="footer-content__column-title footer-content__column-title--text-color">Company</h3>
-        </li>
-        <li class="footer-content__column-item"><a href="#"
-            class="footer-content__column-link footer-content__column-link--text-color">About</a></li>
-        <li class="footer-content__column-item"><a href="#"
-            class="footer-content__column-link footer-content__column-link--text-color">Team</a></li>
-        <li class="footer-content__column-item"><a href="#"
-            class="footer-content__column-link footer-content__column-link--text-color">Blog</a></li>
-        <li class="footer-content__column-item"><a href="#"
-            class="footer-content__column-link footer-content__column-link--text-color">Careers</a></li>
-      </ul>
-      <ul class="footer-content__column">
-        <li class="footer-content__column-item footer-content__column-item--mb-1">
-          <h3 class="footer-content__column-title footer-content__column-title--text-color">Connect</h3>
-        </li>
-        <li class="footer-content__column-item"><a href="#"
-            class="footer-content__column-link footer-content__column-link--text-color">Contact</a></li>
-        <li class="footer-content__column-item"><a href="#"
-            class="footer-content__column-link footer-content__column-link--text-color">Newsletter</a></li>
-        <li class="footer-content__column-item"><a href="#"
-            class="footer-content__column-link footer-content__column-link--text-color">LinkedIn</a></li>
-      </ul>
-    </div>
-    <div class="footer-content__attribution">
-      <p class="footer-content__attribution-text footer-content__attribution-text--text-color">Challenge by <a
-          class="footer-content__attribution-link" href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          rel="noopener"> Frontend
-          Mentor</a>.</p>
-      <p class="footer-content__attribution-text footer-content__attribution-text--text-color">Coded by <a
-          class="footer-content__attribution-link" href="https://mrgeminus.com/" target="_blank" rel="noopener">Uros
-          Tomic</a>.</span>
+  <footer class="footer">
+    <nav class="footer-nav">
+      <div class="footer-nav__col footer-nav__col--col-1 footer-nav__col--mb-2">
+        <a class="footer-logo-link" href="https://mrgeminus.github.io/blogr-landing-page/"><img
+            class="footer-logo__image" src="/images/logo.svg" alt="Blogr logo"></a>
+      </div>
+      <div class="footer-nav__col footer-nav__col--col-2 footer-nav__col--mb-1">
+        <h4 class="footer-nav__col-title">Product</h4>
+        <ul class="footer-nav__col-list">
+          <li class="footer-nav__col-list-item"><a class="footer-nav__col-list-link" href="#">Overview</a></li>
+          <li class="footer-nav__col-list-item"><a class="footer-nav__col-list-link" href="#">Pricing</a></li>
+          <li class="footer-nav__col-list-item"><a class="footer-nav__col-list-link" href="#">Marketplace</a></li>
+          <li class="footer-nav__col-list-item"><a class="footer-nav__col-list-link" href="#">Features</a></li>
+          <li class="footer-nav__col-list-item"><a class="footer-nav__col-list-link" href="#">Integrations</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav__col footer-nav__col--col-3 footer-nav__col--mb-1">
+        <h4 class="footer-nav__col-title">Company</h4>
+        <ul class="footer-nav__col-list">
+          <li class="footer-nav__col-list-item"><a class="footer-nav__col-list-link" href="#">About</a></li>
+          <li class="footer-nav__col-list-item"><a class="footer-nav__col-list-link" href="#">Team</a></li>
+          <li class="footer-nav__col-list-item"><a class="footer-nav__col-list-link" href="#">Blog</a></li>
+          <li class="footer-nav__col-list-item"><a class="footer-nav__col-list-link" href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav__col footer-nav__col--col-4">
+        <h4 class="footer-nav__col-title">Connect</h4>
+        <ul class="footer-nav__col-list">
+          <li class="footer-nav__col-list-item"><a class="footer-nav__col-list-link" href="#">Contact</a></li>
+          <li class="footer-nav__col-list-item"><a class="footer-nav__col-list-link" href="#">Newsletter</a></li>
+          <li class="footer-nav__col-list-item"><a class="footer-nav__col-list-link" href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="footer__attribution">
+      <p class="footer__attribution-text">Challenge by <a class="footer__attribution-link"
+          href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
+      <p class="footer__attribution-text footer__attribution-text--ml">Coded by <a class="footer__attribution-link"
+          href="#" target="_blank">Uros
+          Tomic</a>.</p>
     </div>
   </footer>
-  <script src="js/script.js"></script>
 </body>
 
 </html>

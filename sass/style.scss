@@ -7,6 +7,153 @@
     box-sizing: border-box;
 }
 
+.header {
+    height: 50vh;
+    position: relative;
+    background: url(../images/bg-pattern-intro.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom-left-radius: 5.5rem;
+
+    &__overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(90deg,hsl(13, 100%, 72%),hsl(353, 100%, 62%));
+        border-bottom-left-radius: 5.5rem;
+        z-index: -1;
+    }
+
+    &-nav {
+        display: flex;
+        align-items: center;
+    }
+
+    &__dropdown {
+        display: flex;
+        align-items: center;
+        list-style: none;
+    }
+
+    &__dropdown-title {
+        position: relative;
+        color: hsla(0, 0%, 100%, 0.7);
+        font-size: 1rem;
+        font-weight: 500;
+        font-family: 'Ubuntu', sans-serif;
+    }
+
+    &__dropdown-title:hover {
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    &__dropdown-list {
+        width: 10.5rem;
+        height: fit-content;
+        padding: 1.7rem 1.5rem;
+        position: absolute;
+        bottom: 0;
+        background: hsl(0, 0%, 100%);
+        border-radius: 0.3rem;
+        list-style: none;
+        transform: scale(1,0);
+        transform-origin: top;
+        transition: transform 0.25s ease-in-out;
+    }
+
+    &__dropdown-title:hover + &__dropdown-list {
+        transform: scale(1,1);
+    }
+
+    &__dropdown-list-item--mb {
+       margin-bottom: 0.7rem;
+    }
+
+    &__dropdown-list-link {
+        color: hsl(207, 13%, 34%);
+        font-size: 1rem;
+        font-weight: 500;
+        font-family: 'Ubuntu', sans-serif;
+        text-decoration: none;
+    }
+
+    &__dropdown-list-link:hover {
+        color: hsl(208, 49%, 24%);
+        font-weight: 700;
+    }
+
+    &__showcase {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__showcase-title {
+        margin-top: 5rem;
+        color: hsl(0, 0%, 100%);
+        font-size: 3.5rem;
+        font-weight: 600;
+        font-family: 'Overpass', sans-serif;
+        text-align: center;
+    }
+
+    &__showcase-description {
+        margin-top: 1rem;
+        color: hsl(0, 0%, 100%);
+        font-size: 1rem;
+        font-weight: 300;
+        font-family: 'Overpass', sans-serif;
+        text-align: center;
+    }
+
+    &__call-to-action {
+        margin-top: 5rem;
+    }
+}
+
+.hamburger-menu {
+    width: 2.1rem;
+    height: 2.1rem;
+    display: none;
+    border: 0;
+
+    &--open {
+        background: url(../images/icon-hamburger.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &--close {
+        background: url(../images/icon-close.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.link {
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: none;
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 2rem;
+    text-decoration: none;
+
+    &--red {
+        color: hsl(0, 0%, 100%);
+        background: linear-gradient(90deg, hsl(13, 100%, 72%),hsl(353, 100%, 62%));
+    }
+}
+
 .section {
     padding: 9.5rem 9.5rem 15rem 9.5rem;
     display: flex;
@@ -75,8 +222,8 @@
         color: hsla(208, 49%, 24%, 0.85);
         font-size: 2rem;
         font-weight: 600;
-        text-align: center;
         font-family: 'Overpass', sans-serif;
+        text-align: center;
     }
 
     &__subtitle {
@@ -198,6 +345,33 @@
 }
 
 @media (max-width: 1000px) {
+    .section {
+        width: 100vw;
+        padding: 4.1rem 7rem 1rem 7rem;
+        align-items: center;
+
+        &__editor-illustration {
+            width: 23rem;
+            height: 22rem;
+            margin-right: 0rem;
+            position: static;
+            top: 0rem;
+            right: 0rem;
+            background: url(../images/illustration-editor-mobile.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        &__subtitle {
+            margin-right: 0rem;
+            text-align: center;
+        }
+
+        &__description {
+            margin-right: 0rem;
+            text-align: center;
+        }
+    }
     // Footer styling
     .footer {
         padding: 4.1rem 7rem 1rem 7rem;
@@ -219,6 +393,10 @@
 }
 
 @media (max-width: 630px) {
+
+    .hamburger-menu {
+        display: block;
+    }
     // Footer styling
     .footer {
         padding: 4.1rem 3rem 1rem 3rem;

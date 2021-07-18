@@ -8,11 +8,11 @@
 }
 
 .header {
-    height: 50vh;
+    padding: 3rem 10rem 9rem 10rem;
     position: relative;
     background: url(../images/bg-pattern-intro.svg);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left -27.3rem bottom -80rem;
     border-bottom-left-radius: 5.5rem;
 
     &__overlay {
@@ -31,41 +31,88 @@
         align-items: center;
     }
 
-    &__dropdown {
+    &-logo__image {
+        width: 6.3rem;
+    }
+
+    &-menu {
+        margin-left: 6rem;
         display: flex;
         align-items: center;
         list-style: none;
     }
 
-    &__dropdown-title {
+    &__dropdown {
+        display: flex;
+        flex-direction: column;
         position: relative;
+        list-style: none;
+        cursor: pointer;
+    }
+
+    &__dropdown--mr {
+        margin-right: 2.7rem;
+    }
+
+    &__dropdown:hover > &__dropdown-item > &__dropdown-title {
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    &__dropdown:hover > &__dropdown-item > &__dropdown-title &__dropdown-arrow  {
+        transform: rotate(180deg);
+    }
+
+    &__dropdown:hover > &__dropdown-item > &__dropdown-list {
+        transform: scale(1,1);
+    }
+
+    &__dropdown:hover > &__dropdown-item > &__dropdown-list > &__dropdown-list-item > &__dropdown-list-link {
+        opacity: 1;
+        transition: opacity 0.25s ease-in-out 0.25s;
+    }
+
+    &__dropdown-title {
+        width: 5.5rem;
         color: hsla(0, 0%, 100%, 0.7);
         font-size: 1rem;
         font-weight: 500;
         font-family: 'Ubuntu', sans-serif;
     }
 
-    &__dropdown-title:hover {
-        font-weight: 700;
-        text-decoration: underline;
+    &__dropdown-arrow {
+        width: 0.6rem;
+        height: 0.6rem;
+        margin-left: 0.5rem;
+        display: inline-block;
+        background: url(../images/icon-arrow-light.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transition: transform 0.25s ease-in-out;
+    }
+
+    &__dropdown-item--mt {
+        width: 10.5rem;
+        height: 14.64rem;
+        position: absolute;
+        top: 0rem;
     }
 
     &__dropdown-list {
         width: 10.5rem;
         height: fit-content;
         padding: 1.7rem 1.5rem;
+        margin-top: 2.5rem;
         position: absolute;
-        bottom: 0;
+        top: 0rem;
+        left: -2.5rem;
         background: hsl(0, 0%, 100%);
         border-radius: 0.3rem;
         list-style: none;
         transform: scale(1,0);
         transform-origin: top;
         transition: transform 0.25s ease-in-out;
-    }
-
-    &__dropdown-title:hover + &__dropdown-list {
-        transform: scale(1,1);
     }
 
     &__dropdown-list-item--mb {
@@ -78,6 +125,8 @@
         font-weight: 500;
         font-family: 'Ubuntu', sans-serif;
         text-decoration: none;
+        opacity: 0;
+        transition: opacity 0.15s ease-in-out;
     }
 
     &__dropdown-list-link:hover {
@@ -92,9 +141,9 @@
     }
 
     &__showcase-title {
-        margin-top: 5rem;
-        color: hsl(0, 0%, 100%);
-        font-size: 3.5rem;
+        margin-top: 7rem;
+        color: hsla(0, 0%, 100%, 0.8);
+        font-size: 3rem;
         font-weight: 600;
         font-family: 'Overpass', sans-serif;
         text-align: center;
@@ -102,7 +151,7 @@
 
     &__showcase-description {
         margin-top: 1rem;
-        color: hsl(0, 0%, 100%);
+        color: hsla(0, 0%, 100%, 0.7);
         font-size: 1rem;
         font-weight: 300;
         font-family: 'Overpass', sans-serif;
@@ -110,7 +159,16 @@
     }
 
     &__call-to-action {
-        margin-top: 5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &__call-to-action:last-of-type {
+        margin-left: auto;
+    }
+
+    &__showcase-call-to-action {
+        margin-top: 3rem;
     }
 }
 
@@ -134,32 +192,78 @@
 }
 
 .link {
+    color: hsl(0, 0%, 100%);
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 400;
     font-family: 'Ubuntu', sans-serif;
     text-decoration: none;
+    transition: all 0.25s ease-in-out;
+
+    &--mr {
+        margin-right: 2rem;
+    }
+
+    &:hover {
+        font-weight: 500;
+        text-decoration: underline;
+    }
 }
 
 .btn {
-    padding: 1rem 2.5rem;
+    width: 8.3rem;
+    padding: 0.8rem 0.9rem 0.8rem 0.9rem;
+    display: inline-block;
     font-size: 1rem;
     font-weight: 500;
     font-family: 'Ubuntu', sans-serif;
-    border-radius: 2rem;
     text-decoration: none;
+    text-align: center;
+    border-radius: 2rem;
 
-    &--red {
+    &--white {
+        color: hsl(356, 100%, 66%);
+        background: hsl(0, 0%, 100%);
+        border: 0.1rem solid hsl(0, 0%, 100%);
+        transition: all 0.25s ease-in-out;
+    }
+
+    &--white:hover {
         color: hsl(0, 0%, 100%);
-        background: linear-gradient(90deg, hsl(13, 100%, 72%),hsl(353, 100%, 62%));
+        background: hsl(355, 100%, 74%);
+        border: 0.1rem solid hsl(355, 100%, 74%);
+    }
+
+    &--transparent {
+        color: hsl(0, 0%, 100%);
+        background: transparent;
+        border: 0.1rem solid hsl(0, 0%, 100%);
+        transition: all 0.25s ease-in-out;
+    }
+
+    &--transparent:hover {
+        color: hsl(356, 100%, 66%);
+        background: hsl(0, 0%, 100%);
+        border: 0.1rem solid hsl(0, 0%, 100%);
+    }
+
+    &--mr {
+        margin-right: 1rem;
     }
 }
 
 .section {
-    padding: 9.5rem 9.5rem 15rem 9.5rem;
     display: flex;
-    flex-direction: column;
     position: relative;
     overflow: hidden;
+
+    &--reverse {
+        flex-direction: row-reverse;
+    }
+
+    &__text-content {
+        width: 50%;
+        margin: auto 0;
+    }
 
     &--bg-color {
         background: linear-gradient(90deg, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
@@ -186,14 +290,11 @@
     }
 
     &__editor-illustration {
-        width: 57.8rem;
+        width: 50%;
         height: 55.1rem;
-        margin-right: -17rem;
-        position: absolute;
-        top: 0rem;
-        right: 0;
         background: url(../images/illustration-editor-desktop.svg);
         background-repeat: no-repeat;
+        background-position: right -17.5rem center;
     }
 
     &__mobile-illustration {
@@ -208,14 +309,11 @@
     }
 
     &__laptop-illustration {
-        width: 57.8rem;
+        width: 50%;
         height: 55.1rem;
-        margin-left: -17.5rem;
-        position: absolute;
-        top: 0rem;
-        left: 0rem;
         background: url(../images/illustration-laptop-desktop.svg);
         background-repeat: no-repeat;
+        background-position: left -17.5rem center;
     }
 
     &__title {
@@ -227,19 +325,17 @@
     }
 
     &__subtitle {
-        margin-right: 35rem;
         color: hsla(208, 49%, 24%, 0.85);
         font-size: 1.7rem;
         font-weight: 600;
         font-family: 'Overpass', sans-serif;
     }
 
-    &__subtitle--mt {
-        margin-top: 5.5rem;
+    &__subtitle--txt-color {
+        color: hsla(0, 0%, 100%, 0.8);
     }
 
     &__description {
-        margin-right: 39.5rem;
         margin-top: 1.7rem;
         color: hsla(207, 13%, 34%, 0.85);
         font-size: 1rem;
@@ -248,14 +344,18 @@
         line-height: 1.75rem;
     }
 
+    &__description--txt-color {
+        color: hsla(0, 0%, 100%, 0.7);
+    }
+
     &__description--mb {
-        margin-bottom: 4.3rem;
+        margin-bottom: 3rem;
     }
 }
 
 // Footer styling
 .footer {
-    padding: 4.1rem 9.5rem 1rem 9.5rem;
+    padding: 3rem 10rem 1rem 10rem;
     background: hsl(240, 10%, 16%);
     border-top-right-radius: 5.5rem;
     // Footer navigation bar styling

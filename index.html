@@ -20,7 +20,7 @@
           <li class="header__dropdown-item">
             <h4 class="header__dropdown-title">Product<span class="header__dropdown-arrow"></span></h4>
           </li>
-          <li class="header__dropdown-item header__dropdown-item--mt">
+          <li class="header__dropdown-item header__dropdown-item--hidden">
             <ul class="header__dropdown-list">
               <li class="header__dropdown-list-item header__dropdown-list-item--mb"><a
                   class="header__dropdown-list-link" href="#">Overview</a></li>
@@ -39,7 +39,7 @@
           <li class="header__dropdown-item">
             <h4 class="header__dropdown-title">Company<span class="header__dropdown-arrow"></span></h4>
           </li>
-          <li class="header__dropdown-item header__dropdown-item--mt">
+          <li class="header__dropdown-item header__dropdown-item--hidden">
             <ul class="header__dropdown-list">
               <li class="header__dropdown-list-item header__dropdown-list-item--mb"><a
                   class="header__dropdown-list-link" href="#">About</a></li>
@@ -55,7 +55,7 @@
           <li class="header__dropdown-item">
             <h4 class="header__dropdown-title">Connect<span class="header__dropdown-arrow"></span></h4>
           </li>
-          <li class="header__dropdown-item header__dropdown-item--mt">
+          <li class="header__dropdown-item header__dropdown-item--hidden">
             <ul class="header__dropdown-list">
               <li class="header__dropdown-list-item header__dropdown-list-item--mb"><a
                   class="header__dropdown-list-link" href="#">Contact</a></li>
@@ -65,12 +65,12 @@
             </ul>
           </li>
         </ul>
+        <div class="header__call-to-action">
+          <a class="link link--mr" href="#">Login</a>
+          <a class="btn btn--white btn--red btn--mt" href="#">Sign Up</a>
+        </div>
       </div>
-      <div class="header__call-to-action">
-        <a class="link link--mr" href="#">Login</a>
-        <a class="btn btn--white" href="#">Sign Up</a>
-        <button id="hamburger-menu" class="hamburger-menu hamburger-menu--open"></button>
-      </div>
+      <button id="hamburger-menu" class="hamburger-menu hamburger-menu--open"></button>
     </nav>
     <div class="header__showcase">
       <h1 class="header__showcase-title">A modern publishing platform</h1>
@@ -82,10 +82,10 @@
     </div>
   </header>
   <main>
-    <h2 class="section__title">Designed for the future</h2>
-    <section class="section section--reverse">
+    <section class="section section--reverse section--padding-right section--extra-padding-bottom">
       <div class="section__editor-illustration"></div>
-      <div class="section__text-content">
+      <h2 class="section__title">Designed for the future</h2>
+      <div class="section__text-content section__text-content--margin-top section__text-content--order">
         <h3 class="section__subtitle section__subtitle--mt">Introducing an extensible editor</h3>
         <p class="section__description section__description--mb">Blogr features an exceedingly intuitive interface
           which
@@ -103,11 +103,12 @@
         </p>
       </div>
     </section>
-    <section class="section section--bg-color section--overflow-y">
+    <section class="section section--bg-color section--overflow-y section--padding-left">
       <div class="section__overlay"></div>
       <div class="section__mobile-illustration"></div>
-      <div class="section__text-content">
-        <h3 class="section__subtitle section__subtitle--txt-color">State of the Art Infrastructure</h3>
+      <div class="section__text-content section__text-content--align-left">
+        <h3 class="section__subtitle section__subtitle--txt-color section__subtitle--big-text">State of the Art
+          Infrastructure</h3>
         <p class="section__description section__description--txt-color">With reliability and speed in mind, worldwide
           data centers provide the backbone
           for ultra-fast connectivity.
@@ -115,7 +116,7 @@
         </p>
       </div>
     </section>
-    <section class="section">
+    <section class="section section--padding-left">
       <div class="section__laptop-illustration"></div>
       <div class="section__text-content">
         <h3 class="section__subtitle">Free, open, simple</h3>
@@ -177,6 +178,7 @@
           Tomic</a>.</p>
     </div>
   </footer>
+  <script src="js/script.js"></script>
 </body>
 
 </html>

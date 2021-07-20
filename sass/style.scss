@@ -8,11 +8,11 @@
 }
 
 .header {
-    padding: 3rem 10rem 9rem 10rem;
+    padding: 3rem 11rem 9rem 11rem;
     position: relative;
     background: url(../images/bg-pattern-intro.svg);
     background-repeat: no-repeat;
-    background-position: left -27.3rem bottom -80rem;
+    background-position: left -89vw bottom 49%;
     border-bottom-left-radius: 5.5rem;
 
     &__overlay {
@@ -36,10 +36,18 @@
     }
 
     &-menu {
+        width: 100%;
         margin-left: 6rem;
         display: flex;
         align-items: center;
         list-style: none;
+        transform: scale(1, 0);
+        transform-origin: top;
+        transition: transform ease-in-out 0.25s;
+    }
+
+    &-menu--active {
+        transform: scale(1, 1);
     }
 
     &__dropdown {
@@ -61,6 +69,10 @@
 
     &__dropdown:hover > &__dropdown-item > &__dropdown-title &__dropdown-arrow  {
         transform: rotate(180deg);
+    }
+
+    &__dropdown:hover > &__dropdown-item--hidden {
+        height: 14.64rem;
     }
 
     &__dropdown:hover > &__dropdown-item > &__dropdown-list {
@@ -92,11 +104,20 @@
         transition: transform 0.25s ease-in-out;
     }
 
-    &__dropdown-item--mt {
-        width: 10.5rem;
-        height: 14.64rem;
+    &__dropdown-arrow--active {
+        transform: rotate(180deg); 
+    }
+
+    &__dropdown-item--hidden {
+        width: 5.5rem;
+        height: 0rem;
         position: absolute;
         top: 0rem;
+    }
+
+    &__dropdown-item--active {
+        height: fit-content;
+        position: static;
     }
 
     &__dropdown-list {
@@ -115,6 +136,10 @@
         transition: transform 0.25s ease-in-out;
     }
 
+    &__dropdown-list--active {
+        transform: scale(1,1);
+    }
+
     &__dropdown-list-item--mb {
        margin-bottom: 0.7rem;
     }
@@ -127,6 +152,11 @@
         text-decoration: none;
         opacity: 0;
         transition: opacity 0.15s ease-in-out;
+    }
+
+    &__dropdown-list-link--active {
+        opacity: 1;
+        transition: opacity 0.25s ease-in-out 0.25s;
     }
 
     &__dropdown-list-link:hover {
@@ -175,6 +205,7 @@
 .hamburger-menu {
     width: 2.1rem;
     height: 2.1rem;
+    margin-left: auto;
     display: none;
     border: 0;
 
@@ -252,6 +283,7 @@
 }
 
 .section {
+    padding: 8.8rem 11rem 8.9rem 11rem;
     display: flex;
     position: relative;
     overflow: hidden;
@@ -260,20 +292,30 @@
         flex-direction: row-reverse;
     }
 
+    &--padding-left {
+        padding-left: 0rem;        
+    }
+
+    &--padding-right {
+        padding-right: 0rem;
+    }
+
     &__text-content {
         width: 50%;
-        margin: auto 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     &--bg-color {
         background: linear-gradient(90deg, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
         border-top-right-radius: 5.5rem;
         border-bottom-left-radius: 5.5rem;
+        z-index: -2;
     }
 
     &--overflow-y {
         overflow: unset;
-        padding: 8.8rem 9.5rem 8.8rem 9.5rem;
     }
 
     &__overlay {
@@ -287,6 +329,7 @@
         background-position: left -13.5rem bottom -7rem;
         border-top-right-radius: 5.5rem;
         border-bottom-left-radius: 5.5rem;
+        z-index: -1;
     }
 
     &__editor-illustration {
@@ -298,7 +341,7 @@
     }
 
     &__mobile-illustration {
-        width: 34.5rem;
+        width: 50%;
         height: 36.2rem;
         margin-top: -4.3rem;
         position: absolute;
@@ -306,6 +349,7 @@
         left: 7.7rem;
         background: url(../images/illustration-phones.svg);
         background-repeat: no-repeat;
+        background-size: 34.5rem 36.2rem;
     }
 
     &__laptop-illustration {
@@ -316,7 +360,15 @@
         background-position: left -17.5rem center;
     }
 
+    &__text-content--align-left:last-child {
+        margin-left: auto;
+    }
+
     &__title {
+        width: 100%;
+        position: absolute;
+        top: 21%;
+        left: 0;
         color: hsla(208, 49%, 24%, 0.85);
         font-size: 2rem;
         font-weight: 600;
@@ -335,6 +387,10 @@
         color: hsla(0, 0%, 100%, 0.8);
     }
 
+    &__subtitle--big-text {
+        font-size: 2rem;
+    }
+
     &__description {
         margin-top: 1.7rem;
         color: hsla(207, 13%, 34%, 0.85);
@@ -342,6 +398,7 @@
         font-weight: 300;
         font-family: 'Overpass', sans-serif;
         line-height: 1.75rem;
+        z-index: 1;
     }
 
     &__description--txt-color {
@@ -354,6 +411,7 @@
 }
 
 // Footer styling
+
 .footer {
     padding: 3rem 10rem 1rem 10rem;
     background: hsl(240, 10%, 16%);
@@ -445,21 +503,172 @@
 }
 
 @media (max-width: 1000px) {
+    .header {
+        height: 90vh;
+        padding: 4.1rem 7rem 1rem 7rem;
+        &-nav {
+            position: relative;
+        }
+    
+        &-menu {
+            width: 100%;
+            padding: 2.5rem 2rem;
+            margin-left: 0rem;
+            flex-direction: column;
+            position: absolute;
+            top: 4.5rem;
+            background: hsl(0, 0%, 100%);
+        }
+    
+        &__dropdown {
+            width: 100%;
+            margin-bottom: 2.5rem;
+            align-items: center;
+        }
+
+        &__dropdown-item--hidden {
+            width: 100%;
+        }
+    
+        &__dropdown--mr {
+            margin-right: 0rem;
+        }
+        &__dropdown-title {
+            width: 5.5rem;
+            color: hsl(208, 49%, 24%);
+            font-size: 1rem;
+            font-weight: 500;
+            font-family: 'Ubuntu', sans-serif;
+            z-index: 5;
+        }
+    
+        &__dropdown-arrow {
+            width: 0.6rem;
+            height: 0.6rem;
+            margin-left: 0.5rem;
+            display: inline-block;
+            background: url(../images/icon-arrow-dark.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            transition: transform 0.25s ease-in-out;
+        }
+
+        &__dropdown-list {
+            width: 100%;
+            margin-top: 1.7rem;
+            position: static;
+            background: hsla(0, 0%, 91%, 0.7);
+        }
+
+        &__dropdown-list-item {
+            width: 100%;
+            text-align: center;
+        }
+
+        &__dropdown-list-item--mb {
+            margin-bottom: 1.2rem;
+        }
+
+        &__call-to-action {
+            width: 100%;
+            padding-top: 2.5rem;
+            flex-direction: column;
+            border-top: 0.1rem solid hsla(0, 0%, 91%, 0.7);
+        }
+
+        &__call-to-action:last-of-type {
+            margin-left: unset;
+        }
+    }
+
+    .hamburger-menu {
+        display: inline-block;
+    }
+
+    .btn {
+        &--red {
+            color: hsl(0, 0%, 100%);
+            background: linear-gradient(90deg, hsl(13, 100%, 72%),hsl(353, 100%, 62%));
+            border: 0.1rem solid linear-gradient(hsl(13, 100%, 72%),hsl(353, 100%, 62%));
+        }
+        &--mt {
+            margin-top: 1.5rem;
+        }
+    }
+
+    .link {
+        color: hsl(208, 49%, 24%);
+    
+        &--mr {
+            margin-right: 0rem;
+        }
+    }
+
     .section {
         width: 100vw;
-        padding: 4.1rem 7rem 1rem 7rem;
+        padding: 5.5rem 7rem 5.5rem 7rem;
+        flex-direction: column;
         align-items: center;
 
+        &--extra-padding-bottom {
+            padding-bottom: 23rem;
+        }
+
+        &--bg-color {
+            padding-top: 18rem;
+            padding-bottom: 7rem;
+            background: linear-gradient(180deg, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+        }
+
         &__editor-illustration {
-            width: 23rem;
-            height: 22rem;
+            width: 100%;
+            height: calc(100vw - 13rem);
             margin-right: 0rem;
+            margin-bottom: 2rem;
             position: static;
-            top: 0rem;
-            right: 0rem;
             background: url(../images/illustration-editor-mobile.svg);
             background-repeat: no-repeat;
+            background-size: 123%;
             background-position: center;
+            order: 2;
+        }
+
+        &__mobile-illustration {
+            width: 100%;
+            height: 35rem;
+            margin-top: -17rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url(../images/illustration-phones.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 34.5rem 36.2rem;
+        }
+
+        &__laptop-illustration {
+            width: 100%;
+            height: calc(100vw - 14rem);
+            margin-bottom: 2.7rem;
+            background: url(../images/illustration-laptop-mobile.svg);
+            background-repeat: no-repeat;
+            background-size: 150%;
+            background-position: center;
+        }
+
+        &__title {
+            margin-bottom: 2rem;
+            position: static;
+            order: 1;
+        }
+
+        &__text-content {
+            width: 100%;
+        }
+
+        &__text-content--order {
+            order: 3;
         }
 
         &__subtitle {
@@ -493,13 +702,88 @@
 }
 
 @media (max-width: 630px) {
+    .header {
+        padding: 4.1rem 1.7rem 1rem 1.7rem;
+    }
 
-    .hamburger-menu {
-        display: block;
+    .section {
+        width: 100vw;
+        padding: 5.5rem 1.7rem 5.5rem 1.7rem;
+        flex-direction: column;
+        align-items: center;
+
+        &--extra-padding-bottom {
+            padding-bottom: 16.5rem;
+        }
+
+        &--bg-color {
+            padding-top: 13.9rem;
+            padding-bottom: 7rem;
+            background: linear-gradient(180deg, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+        }
+
+        &__overlay {
+            background: url(../images/bg-pattern-circles.svg);
+            background-repeat: no-repeat;
+            background-size: 157%;
+            background-position: left -6.7rem bottom 14.9rem;
+        }
+
+        &__editor-illustration {
+            width: 100%;
+            height: calc(100vw - 3rem);
+            margin-right: 0rem;
+            margin-bottom: 2rem;
+            position: static;
+            background: url(../images/illustration-editor-mobile.svg);
+            background-repeat: no-repeat;
+            background-size: 123%;
+            background-position: center;
+        }
+
+        &__mobile-illustration {
+            width: 100%;
+            height: calc(100vw - 1.9rem);
+            margin-top: -11rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url(../images/illustration-phones.svg);
+            background-repeat: no-repeat;
+            background-position: center bottom -2.4rem;
+            background-size: 100%;
+        }
+
+        &__laptop-illustration {
+            width: 100%;
+            height: calc(100vw - 3rem);
+            margin-bottom: 2.7rem;
+            background: url(../images/illustration-laptop-mobile.svg);
+            background-repeat: no-repeat;
+            background-size: 150%;
+            background-position: center;
+        }
+
+        &__title {
+            font-size: 1.6rem;
+        }
+
+        &__subtitle {
+            padding: 0 0.9rem;
+            font-size: 1.6rem;
+        }
+
+        &__subtitle--big-text {
+            font-size: 2rem;
+        }
+
+        &__description {
+            font-size: 1.09rem;
+        }
     }
     // Footer styling
     .footer {
-        padding: 4.1rem 3rem 1rem 3rem;
+        padding: 4.1rem 1.7rem 1rem 1.7rem;
 
         &-nav {
             grid-template: 'col-1'

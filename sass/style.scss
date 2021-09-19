@@ -1,285 +1,415 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+$breakpoint: (
+  'medium': '24rem',
+  'big': '46rem',
+);
+
+@mixin breakpoint($value) {
+  @media (min-width: map-get($breakpoint, $value)){
+      @content;
+  }
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html, body{
+    overflow-x: hidden;
+}
+
 .header {
-    padding: 3rem 11rem 9rem 11rem;
-    position: relative;
-    background: url(../images/bg-pattern-intro.svg);
-    background-repeat: no-repeat;
-    background-position: left -89vw bottom 49%;
-    border-bottom-left-radius: 5.5rem;
+  width: 100vw;
+  height: 90vh;
+  padding: 3rem 1.7rem;
+  border-bottom-left-radius: 5rem;
+  position: relative;
+  background: url('../images/bg-pattern-intro.svg');
+  background-size: 350%;
+  background-position: left -20.5rem top -15rem;
+  background-repeat: no-repeat;
 
-    &__overlay {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: linear-gradient(90deg,hsl(13, 100%, 72%),hsl(353, 100%, 62%));
-        border-bottom-left-radius: 5.5rem;
-        z-index: -1;
-    }
+  @include breakpoint(big) {
+    padding: 3.9rem 11.5rem;
+    background-size: 250%;
+    background-position: left -30rem top -95rem;
+  }
 
-    &-nav {
-        display: flex;
-        align-items: center;
-    }
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    z-index: -1;
+  }
 
-    &-logo__image {
-        width: 6.3rem;
-    }
-
-    &-menu {
-        width: 100%;
-        margin-left: 6rem;
-        display: flex;
-        align-items: center;
-        list-style: none;
-        transform: scale(1, 0);
-        transform-origin: top;
-        transition: transform ease-in-out 0.25s;
-    }
-
-    &-menu--active {
-        transform: scale(1, 1);
-    }
-
-    &__dropdown {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        list-style: none;
-        cursor: pointer;
-    }
-
-    &__dropdown--mr {
-        margin-right: 2.7rem;
-    }
-
-    &__dropdown:hover > &__dropdown-item > &__dropdown-title {
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    &__dropdown:hover > &__dropdown-item > &__dropdown-title &__dropdown-arrow  {
-        transform: rotate(180deg);
-    }
-
-    &__dropdown:hover > &__dropdown-item--hidden {
-        height: 14.64rem;
-    }
-
-    &__dropdown:hover > &__dropdown-item > &__dropdown-list {
-        transform: scale(1,1);
-    }
-
-    &__dropdown:hover > &__dropdown-item > &__dropdown-list > &__dropdown-list-item > &__dropdown-list-link {
-        opacity: 1;
-        transition: opacity 0.25s ease-in-out 0.25s;
-    }
-
-    &__dropdown-title {
-        width: 5.5rem;
-        color: hsla(0, 0%, 100%, 0.7);
-        font-size: 1rem;
-        font-weight: 500;
-        font-family: 'Ubuntu', sans-serif;
-    }
-
-    &__dropdown-arrow {
-        width: 0.6rem;
-        height: 0.6rem;
-        margin-left: 0.5rem;
-        display: inline-block;
-        background: url(../images/icon-arrow-light.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        transition: transform 0.25s ease-in-out;
-    }
-
-    &__dropdown-arrow--active {
-        transform: rotate(180deg); 
-    }
-
-    &__dropdown-item--hidden {
-        width: 5.5rem;
-        height: 0rem;
-        position: absolute;
-        top: 0rem;
-    }
-
-    &__dropdown-item--active {
-        height: fit-content;
-        position: static;
-    }
-
-    &__dropdown-list {
-        width: 10.5rem;
-        height: fit-content;
-        padding: 1.7rem 1.5rem;
-        margin-top: 2.5rem;
-        position: absolute;
-        top: 0rem;
-        left: -2.5rem;
-        background: hsl(0, 0%, 100%);
-        border-radius: 0.3rem;
-        list-style: none;
-        transform: scale(1,0);
-        transform-origin: top;
-        transition: transform 0.25s ease-in-out;
-    }
-
-    &__dropdown-list--active {
-        transform: scale(1,1);
-    }
-
-    &__dropdown-list-item--mb {
-       margin-bottom: 0.7rem;
-    }
-
-    &__dropdown-list-link {
-        color: hsl(207, 13%, 34%);
-        font-size: 1rem;
-        font-weight: 500;
-        font-family: 'Ubuntu', sans-serif;
-        text-decoration: none;
-        opacity: 0;
-        transition: opacity 0.15s ease-in-out;
-    }
-
-    &__dropdown-list-link--active {
-        opacity: 1;
-        transition: opacity 0.25s ease-in-out 0.25s;
-    }
-
-    &__dropdown-list-link:hover {
-        color: hsl(208, 49%, 24%);
-        font-weight: 700;
-    }
-
-    &__showcase {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    &__showcase-title {
-        margin-top: 7rem;
-        color: hsla(0, 0%, 100%, 0.8);
-        font-size: 3rem;
-        font-weight: 600;
-        font-family: 'Overpass', sans-serif;
-        text-align: center;
-    }
-
-    &__showcase-description {
-        margin-top: 1rem;
-        color: hsla(0, 0%, 100%, 0.7);
-        font-size: 1rem;
-        font-weight: 300;
-        font-family: 'Overpass', sans-serif;
-        text-align: center;
-    }
-
-    &__call-to-action {
-        display: flex;
-        align-items: center;
-    }
-
-    &__call-to-action:last-of-type {
-        margin-left: auto;
-    }
-
-    &__showcase-call-to-action {
-        margin-top: 3rem;
-    }
-}
-
-.hamburger-menu {
-    width: 2.1rem;
-    height: 2.1rem;
-    margin-left: auto;
-    display: none;
-    border: 0;
-
-    &--open {
-        background: url(../images/icon-hamburger.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    &--close {
-        background: url(../images/icon-close.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-}
-
-.link {
+  &__hero-heading {
+    margin-top: 7rem;
     color: hsl(0, 0%, 100%);
-    font-size: 1rem;
-    font-weight: 400;
-    font-family: 'Ubuntu', sans-serif;
-    text-decoration: none;
+    font-size: 2.16rem;
+    font-weight: 600;
+    font-family: 'Overpass', sans-serif;
+    text-align: center;
+  }
+
+  &__hero-paragraph {
+    margin-top: 1.1rem;
+    color: hsla(0, 0%, 100%, 0.85);
+    font-size: 1.17rem;
+    font-weight: 300;
+    font-family: 'Overpass', sans-serif;
+    text-align: center;
+  }
+
+  &__cta-wrapper {
+    margin-top: 2.45rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+.navbar {
+    display: flex;
+    position: relative;
+
+    &__logo-link {
+      height: 2.5rem;
+
+      @include breakpoint(big) {
+        height: 3.1rem
+      }
+    }
+
+    &__logo-image {
+      height: 100%
+    }
+}
+.menu {
+    width: 100%;
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
+    border-radius: 0.3rem;
+    grid-template-columns: 1fr;
+    position: absolute;
+    top: 5rem;
+    background-color:hsl(0, 0%, 100%);
+    list-style: none;
+
+    @include breakpoint(big) {
+      padding: 0rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      position: static;
+      background-color:transparent;
+    }
+
+    &--is-open{
+      animation: ease-in fadeInRight 0.45s forwards
+    }
+
+    &--is-closed{
+      animation: ease-out fadeOutRight 0.45s forwards
+    }
+
+  &--shadow {
+    box-shadow: -1px 21px 26px 9px rgba(0,0,0,0.2);
+    -webkit-box-shadow: -11px 18px 26px 9px rgba(0,0,0,0.2);
+    -moz-box-shadow: -11px 18px 26px 9px rgba(0,0,0,0.2);
+
+    @include breakpoint(big) {
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+    }
+  }
+
+  &__dropdown {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(big) {
+      //width: 5.7rem;
+      position: relative;
+      justify-content: center;
+    }
+  }  
+
+  &__dropdown--show > &__dropdown-heading > &__dropdown-icon{
+    transform: rotate(180deg);
+  }  
+  &__dropdown--show > &__dropdown-list {
+    padding: 1.5rem 0rem 1.4rem 0rem;
+    max-height: 17rem;
+    opacity: 1;
+    transition: max-height 0.45s ease-in-out, 
+                padding 0.45s ease-in-out,
+                opacity 0.25s ease-in-out 0.2s;
+  } 
+  &__dropdown-heading {
+    padding-right: 1.2rem;
+    margin: 0.5rem auto 1.1rem auto;
+    position: relative;
+    color: hsl(208, 49%, 24%);
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'Overpass', sans-serif;
+    cursor: pointer;
+
+    @include breakpoint(big) {
+      width: fit-content;
+      margin: 0rem;
+      color: hsl(0, 0%, 100%);
+      font-size: 1rem;
+      font-weight: 400;
+      font-family: 'Ubuntu', sans-serif;
+
+      &:hover {
+        font-weight: 500;
+        text-decoration: underline;
+      }
+    }
+  }
+  &__dropdown-icon {
+    width: 0.7rem;
+    height: 0.5rem;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/icon-arrow-dark.svg);
     transition: all 0.25s ease-in-out;
 
-    &--mr {
-        margin-right: 2rem;
+    @include breakpoint(big) {
+      top: 0.4rem;
+      background-image: url(../images/icon-arrow-light.svg);
     }
+  }
+  &__dropdown-list {
+    width:100%;
+    max-height: 0rem;
+    padding: 0rem;
+    border-radius: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: hsla(240, 2%, 79%, 0.25);
+    list-style: none;
+    opacity: 0;
+    overflow: hidden;
+	  -webkit-transition: all 0.45s ease-in-out;
+	  -o-transition: all 0.45s ease-in-out;
+	  -ms-transition: all 0.45s ease-in-out;
+	  transition: max-height 0.45s ease-in-out 0.25s, 
+                padding 0.45s ease-in-out 0.25s,
+                opacity 0.25s ease-in-out;
+
+    @include breakpoint(big) {
+      width: 13rem;
+      align-items: flex-start;
+      position: absolute;
+      top: 4.3rem;
+      left: -1.5rem;
+      background-color: hsl(0, 0%, 100%);
+    }
+  }  
+
+  &__dropdown-item--margin-bottom {
+     margin-bottom: 1.3rem;
+  }
+
+  &__dropdown-link {
+    color: hsla(208, 49%, 24%, 0.75);
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Overpass', sans-serif;
+    text-decoration: none;
 
     &:hover {
-        font-weight: 500;
-        text-decoration: underline;
+      color: hsl(208, 49%, 24%);
     }
+  }
+  // Styling of the navi containing call to action elements
+  &__cta-wrapper {
+    padding-top: 1.7rem;
+    margin-top: 1.5rem;
+    border-top: 0.1rem solid hsla(240, 2%, 79%, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include breakpoint(big) {
+      padding-top: 0rem;
+      margin-top: 0rem;
+      margin-left: auto;
+      border-top: none;
+      flex-direction: row;
+    }
+  }
 }
 
-.btn {
-    width: 8.3rem;
-    padding: 0.8rem 0.9rem 0.8rem 0.9rem;
-    display: inline-block;
+// Styling for links that have a call to action functionality
+.call-to-action {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+
+  // A class that specifies the size of the call to action
+  &--medium-size {
+    width: 8.7rem;
+  }
+
+  // A class that adds padding to the top and bottom of the call to action
+  &--padding {
+    padding: 0.9rem 0;
+  }
+
+  // A class that adds margin to the top of the call to action
+  &--margin-top {
+    margin-top: 1.3rem;
+
+    // The margin top is removed on bigger screens
+    @include breakpoint(big) {
+      margin-top: 0rem;
+    }
+  }
+  &--margin-left {
+      margin-left: 1.3rem;
+  }
+
+  &--margin-right {
+  //
+    @include breakpoint(big) {
+      margin-right: 3rem;
+    }
+  }
+  
+  // A class that rounds the corners of the call to action
+  &--rounded {
+    border-radius: 2rem
+  }
+
+  // A class that specifies the font styling of the call to action
+  &--font-ubuntu {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     font-family: 'Ubuntu', sans-serif;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 2rem;
+  }
 
-    &--white {
-        color: hsl(356, 100%, 66%);
-        background: hsl(0, 0%, 100%);
-        border: 0.1rem solid hsl(0, 0%, 100%);
-        transition: all 0.25s ease-in-out;
+  // A class that specifies the font styling of the call to action
+  &--font-overpass {
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Overpass', sans-serif;
+
+    @include breakpoint(big) {
+      font-size: 1rem;
     }
+  }
 
-    &--white:hover {
-        color: hsl(0, 0%, 100%);
-        background: hsl(355, 100%, 74%);
+  // // Styling applied to the call to action with the changing theme 
+  &--changing-theme {
+    border: 0.1rem solid linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    color: hsl(0, 0%, 100%);
+    background: linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+
+    // The theme changes to white on bigger screens
+    @include breakpoint(big) {
+      border: 0.1rem solid hsl(0, 0%, 100%);
+      color: hsl(356, 100%, 66%);
+      background:none;
+      background-color: hsl(0, 0%, 100%);
+
+      &:hover {
         border: 0.1rem solid hsl(355, 100%, 74%);
-    }
-
-    &--transparent {
         color: hsl(0, 0%, 100%);
-        background: transparent;
-        border: 0.1rem solid hsl(0, 0%, 100%);
-        transition: all 0.25s ease-in-out;
+        background-color: hsl(355, 100%, 74%);
+      }
     }
+  }
 
-    &--transparent:hover {
-        color: hsl(356, 100%, 66%);
-        background: hsl(0, 0%, 100%);
-        border: 0.1rem solid hsl(0, 0%, 100%);
+  // Styling applied to the call to action with the white theme
+  &--white-theme {
+    border: 0.1rem solid hsl(0, 0%, 100%);
+    color: hsl(356, 100%, 66%);
+    background-color: hsl(0, 0%, 100%);
+    
+    &:hover {
+      border: 0.1rem solid hsl(355, 100%, 74%);
+      color: hsl(0, 0%, 100%);
+      background-color: hsl(355, 100%, 74%);
     }
+  }
 
-    &--mr {
-        margin-right: 1rem;
+  // Styling applied to the call to action with the transparent theme
+  &--transparent-theme {
+    border: 0.1rem solid hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%);
+    background-color: transparent;
+
+    &:hover {
+      color: hsl(356, 100%, 66%);
+      background-color: hsl(0, 0%, 100%);
     }
+  }
+
+  // A class that stiles the look of the link like call to action
+  &--link-theme {
+    color: hsl(208, 49%, 24%);
+    @include breakpoint(big) {
+      color: hsl(0, 0%, 100%);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Styling for the button that triggers the navigation menu on mobile devices
+.menu-trigger {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  margin-right: -0.55rem;
+  margin-left: auto;
+  display: inline-block;
+  background-color: transparent;
+  cursor: pointer;
+
+  // On desktop screens the button will be hidden
+  &--hidden {
+    display: none;
+  }
+
+  &--active .hamburger__line-top {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+  }
+
+  &--active .hamburger__line-middle {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 6;
+  }
+
+  &--active .hamburger__line-bottom {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+  }
 }
 
 .section {
@@ -518,6 +648,13 @@
             position: absolute;
             top: 4.5rem;
             background: hsl(0, 0%, 100%);
+            transform: scale(1, 0);
+            transform-origin: top;
+            transition: transform ease-in-out 0.25s;
+        }
+
+        &-menu--active {
+            transform: scale(1, 1);
         }
     
         &__dropdown {
@@ -590,8 +727,16 @@
         &--red {
             color: hsl(0, 0%, 100%);
             background: linear-gradient(90deg, hsl(13, 100%, 72%),hsl(353, 100%, 62%));
-            border: 0.1rem solid linear-gradient(hsl(13, 100%, 72%),hsl(353, 100%, 62%));
+            border: 0.1rem solid linear-gradient(90deg, hsl(13, 100%, 72%),hsl(353, 100%, 62%));
+            transition: all ease-in-out 0.25s;
         }
+
+        &--red:hover {
+            color: hsl(0, 0%, 100%);
+            background: hsl(355, 100%, 74%);
+            border: 0.1rem solid hsl(355, 100%, 74%);
+        }
+
         &--mt {
             margin-top: 1.5rem;
         }
@@ -820,3 +965,60 @@
 
     }
 }
+
+.hamburger {
+    &__line {
+      fill: none;
+      stroke: white;
+      stroke-width: 7;
+      transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  
+    &__line-top {
+      stroke-dasharray: 60 207;
+      stroke-width: 6;
+    }
+  
+    &__line-middle {
+      stroke-dasharray: 60 60;
+      stroke-width: 6;
+    }
+  
+    &__line-bottom {
+      stroke-dasharray: 60 207;
+      stroke-width: 6;
+    }
+  }
+
+/*---------------------------
+  Animations                 
+---------------------------*/
+
+// Makes the mobile navigation menu fadeIn from the right when opened
+
+@keyframes fadeInRight {
+    from {
+      display: grid;
+      opacity: 0;
+      transform: translateX(100vw)
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0)
+    }
+  }
+  
+  // Makes the mobile navigation menu fadeOut from the right when closed
+  
+  @keyframes fadeOutRight {
+    from {
+      opacity: 1;
+      transform: translateX(0vw)
+    }
+    to {
+      display: none;
+      opacity: 0;
+      transform: translateX(100vw)
+    }
+  }

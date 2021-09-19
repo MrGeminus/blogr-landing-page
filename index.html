@@ -12,72 +12,74 @@
 <body>
   <header class="header">
     <div class="header__overlay"></div>
-    <nav class="header-nav">
-      <a class="header-logo__link" href="https://mrgeminus.github.io/blogr-landing-page/"><img
-          class="header-logo__image" src="/images/logo.svg" alt="Blogr logo"></a>
-      <div class="header-menu">
-        <ul class="header__dropdown header__dropdown--mr">
-          <li class="header__dropdown-item">
-            <h4 class="header__dropdown-title">Product<span class="header__dropdown-arrow"></span></h4>
-          </li>
-          <li class="header__dropdown-item header__dropdown-item--hidden">
-            <ul class="header__dropdown-list">
-              <li class="header__dropdown-list-item header__dropdown-list-item--mb"><a
-                  class="header__dropdown-list-link" href="#">Overview</a></li>
-              <li class="header__dropdown-list-item header__dropdown-list-item--mb"><a
-                  class="header__dropdown-list-link" href="#">Pricing</a></li>
-              <li class="header__dropdown-list-item header__dropdown-list-item--mb"><a
-                  class="header__dropdown-list-link" href="#">Marketplace</a></li>
-              <li class="header__dropdown-list-item header__dropdown-list-item--mb"><a
-                  class="header__dropdown-list-link" href="#">Features</a></li>
-              <li class="header__dropdown-list-item"><a class="header__dropdown-list-link" href="#">Integrations</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="header__dropdown header__dropdown--mr">
-          <li class="header__dropdown-item">
-            <h4 class="header__dropdown-title">Company<span class="header__dropdown-arrow"></span></h4>
-          </li>
-          <li class="header__dropdown-item header__dropdown-item--hidden">
-            <ul class="header__dropdown-list">
-              <li class="header__dropdown-list-item header__dropdown-list-item--mb"><a
-                  class="header__dropdown-list-link" href="#">About</a></li>
-              <li class="header__dropdown-list-item header__dropdown-list-item--mb"><a
-                  class="header__dropdown-list-link" href="#">Team</a></li>
-              <li class="header__dropdown-list-item header__dropdown-list-item--mb"><a
-                  class="header__dropdown-list-link" href="#">Blog</a></li>
-              <li class="header__dropdown-list-item"><a class="header__dropdown-list-link" href="#">Careers</a></li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="header__dropdown header__dropdown--mr">
-          <li class="header__dropdown-item">
-            <h4 class="header__dropdown-title">Connect<span class="header__dropdown-arrow"></span></h4>
-          </li>
-          <li class="header__dropdown-item header__dropdown-item--hidden">
-            <ul class="header__dropdown-list">
-              <li class="header__dropdown-list-item header__dropdown-list-item--mb"><a
-                  class="header__dropdown-list-link" href="#">Contact</a></li>
-              <li class="header__dropdown-list-item header__dropdown-list-item--mb"><a
-                  class="header__dropdown-list-link" href="#">Newsletter</a></li>
-              <li class="header__dropdown-list-item"><a class="header__dropdown-list-link" href="#">LinkedIn</a></li>
-            </ul>
-          </li>
-        </ul>
-        <div class="header__call-to-action">
-          <a class="link link--mr" href="#">Login</a>
-          <a class="btn btn--white btn--red btn--mt" href="#">Sign Up</a>
-        </div>
-      </div>
-      <button id="hamburger-menu" class="hamburger-menu hamburger-menu--open"></button>
+    <nav class="navbar header__navbar" aria-label="Main">
+      <a class="navbar__logo-link" href="https://mrgeminus.github.io/blogr-landing-page/" aria-label="Blogr logo"><img
+          class="navbar__logo-image" aria-hidden="true" role="img" src="/images/logo.svg"></a>
+      <ul class="menu menu--shadow header__menu">
+        <li class="menu__dropdown">
+          <h3 class="menu__dropdown-heading">Product<span class="menu__dropdown-icon"></span></h3>
+          <ul class="menu__dropdown-list">
+            <li class="menu__dropdown-item menu__dropdown-item--margin-bottom"><a href="#"
+                class="menu__dropdown-link">Overview</a></li>
+            <li class="menu__dropdown-item menu__dropdown-item--margin-bottom"><a href="#"
+                class="menu__dropdown-link">Pricing</a></li>
+            <li class="menu__dropdown-item menu__dropdown-item--margin-bottom"><a href="#"
+                class="menu__dropdown-link">Marketplace</a></li>
+            <li class="menu__dropdown-item menu__dropdown-item--margin-bottom"><a href="#"
+                class="menu__dropdown-link">Features</a></li>
+            <li class="menu__dropdown-item"><a href="#" class="menu__dropdown-link">Integrations</a></li>
+          </ul>
+        </li>
+        <li class="menu__dropdown">
+          <h3 class="menu__dropdown-heading">Company<span class="menu__dropdown-icon"></span></h3>
+          <ul class="menu__dropdown-list">
+            <li class="menu__dropdown-item menu__dropdown-item--margin-bottom"><a href="#"
+                class="menu__dropdown-link">About</a></li>
+            <li class="menu__dropdown-item menu__dropdown-item--margin-bottom"><a href="#"
+                class="menu__dropdown-link">Team</a></li>
+            <li class="menu__dropdown-item menu__dropdown-item--margin-bottom"><a href="#"
+                class="menu__dropdown-link">Blog</a></li>
+            <li class="menu__dropdown-item"><a href="#" class="menu__dropdown-link">Careers</a></li>
+          </ul>
+        </li>
+        <li class="menu__dropdown">
+          <h3 class="menu__dropdown-heading">Connect<span class="menu__dropdown-icon"></span></h3>
+          <ul class="menu__dropdown-list">
+            <li class="menu__dropdown-item menu__dropdown-item--margin-bottom"><a href="#"
+                class="menu__dropdown-link">Contact</a></li>
+            <li class="menu__dropdown-item menu__dropdown-item--margin-bottom"><a href="#"
+                class="menu__dropdown-link">Newsletter</a></li>
+            <li class="menu__dropdown-item"><a href="#" class="menu__dropdown-link">LinkedIn</a></li>
+          </ul>
+        </li>
+        <li class="menu__cta-wrapper">
+          <a class="call-to-action call-to-action--margin-right call-to-action--font-overpass call-to-action--link-theme"
+            href="#">Login</a>
+          <a class="call-to-action call-to-action--medium-size call-to-action--rounded call-to-action--padding call-to-action--margin-top call-to-action--font-ubuntu call-to-action--changing-theme"
+            href="#">Sign
+            Up</a>
+        </li>
+      </ul>
+      <button type="button" class="menu-trigger" aria-label="Click to open the navigation menu">
+        <svg viewBox="15 6 90 90">
+          <path class="hamburger__line hamburger__line-top"
+            d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+          <path class="hamburger__line hamburger__line-middle" d="M 20,50 H 80" />
+          <path class="hamburger__line hamburger__line-bottom"
+            d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+        </svg>
+      </button>
     </nav>
-    <div class="header__showcase">
-      <h1 class="header__showcase-title">A modern publishing platform</h1>
-      <p class="header__showcase-description">Grow your audience and build your online brand</p>
-      <div class="header__showcase-call-to-action">
-        <a class="btn btn--white btn--mr" href="#">Start for Free</a>
-        <a class="btn btn--transparent" href="#">Learn More</a>
+    <div class="header__hero-section">
+      <h1 class="header__hero-heading">A modern publishing platform</h1>
+      <p class="header__hero-paragraph">Grow your audience and build your online brand</p>
+      <div class="header__cta-wrapper">
+        <a class="call-to-action call-to-action--medium-size call-to-action--padding call-to-action--rounded call-to-action--font-ubuntu call-to-action--white-theme"
+          href="#">Start for
+          Free</a>
+        <a class="call-to-action call-to-action--medium-size call-to-action--padding call-to-action--rounded call-to-action--margin-left call-to-action--font-ubuntu call-to-action--transparent-theme"
+          href="#">Learn
+          more</a>
       </div>
     </div>
   </header>
